@@ -38,7 +38,7 @@ namespace SocialNetwork.IdentityServer
                         alice = new ApplicationUser
                         {
                             UserName = "alice",
-                            Email = "AliceSmith@email.com",
+                            Email = "AliceSmith@email.com", 
                             EmailConfirmed = true,
                         };
                         var result = userMgr.CreateAsync(alice, "Pass123$").Result;
