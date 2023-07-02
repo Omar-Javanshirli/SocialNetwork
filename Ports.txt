@@ -1,0 +1,16 @@
+Services
+	-ProfilAPI => 5011
+	-DiscoverAPI => 5012
+	-FeedAPI => 5013
+	-GraphAPI => 5014
+	-LiveAPI => 5015
+	-MediaAPI => 5016
+	-MessageAPI => 5017
+	-NotificationAPI => 5018
+	-PostAPI => 5019
+	-SearchAPI => 5020
+	-StoryAPI => 5021
+
+IdentityServer => 5001
+Geteway => 5000
+Web => 5010
