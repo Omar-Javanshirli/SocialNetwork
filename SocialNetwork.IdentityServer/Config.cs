@@ -5,6 +5,10 @@ namespace SocialNetwork.IdentityServer
 {
     public static class Config
     {
+        public static IEnumerable<ApiResource> ApiResources =>
+            new ApiResource[]
+            {};
+
         public static IEnumerable<IdentityResource> IdentityResources =>
                    new IdentityResource[]
                    {

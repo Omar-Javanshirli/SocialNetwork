@@ -15,6 +15,7 @@ using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Identity;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.Extensions.Logging;
+using SocialNetwork.IdentityServer.Core.Models;
 
 namespace IdentityServerHost.Quickstart.UI
 {

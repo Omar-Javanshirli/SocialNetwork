@@ -4,4 +4,8 @@
     <TargetFramework>netcoreapp3.1</TargetFramework>
   </PropertyGroup>
 
+  <ItemGroup>
+    <ProjectReference Include="..\..\SocialNetwork.IdentityServer.Data\SocialNetwork.IdentityServer.Data.csproj" />
+  </ItemGroup>
+
 </Project>

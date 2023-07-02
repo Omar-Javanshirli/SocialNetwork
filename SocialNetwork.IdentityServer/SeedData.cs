@@ -3,6 +3,7 @@ using Microsoft.AspNetCore.Identity;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.DependencyInjection;
 using Serilog;
+using SocialNetwork.IdentityServer.Core.Models;
 using SocialNetwork.IdentityServer.Data;
 using SocialNetwork.IdentityServer.Models;
 using System;
