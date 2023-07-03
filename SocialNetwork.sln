@@ -52,29 +52,35 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "SocialNetwork.Services.Sear
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Profil", "Profil", "{F88906FA-4CBA-4F63-9B56-F87E2248F71B}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SocialNetwork.Services.Profil", "Services\Profil\SocialNetwork.Services.Profil\SocialNetwork.Services.Profil.csproj", "{1B359124-330C-4EC8-9D3E-EEDAF5BD26D0}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "SocialNetwork.Services.Profil", "Services\Profil\SocialNetwork.Services.Profil\SocialNetwork.Services.Profil.csproj", "{1B359124-330C-4EC8-9D3E-EEDAF5BD26D0}"
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Message", "Message", "{C56CB008-58AC-4160-BCE8-2CF1E8B30626}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SocialNetwork.Services.Message", "Services\Messages\SocialNetwork.Services.Message\SocialNetwork.Services.Message.csproj", "{65755A30-7DF4-4FD0-9CB6-FE4A67C64156}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "SocialNetwork.Services.Message", "Services\Messages\SocialNetwork.Services.Message\SocialNetwork.Services.Message.csproj", "{65755A30-7DF4-4FD0-9CB6-FE4A67C64156}"
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Live", "Live", "{A8C84B9C-5B7F-4597-B75A-22DE085A4624}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SocialNetwork.Services.Live", "Services\Live\SocialNetwork.Services.Live\SocialNetwork.Services.Live.csproj", "{23EFB3EC-8DD2-4BB1-A794-FE1619565480}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "SocialNetwork.Services.Live", "Services\Live\SocialNetwork.Services.Live\SocialNetwork.Services.Live.csproj", "{23EFB3EC-8DD2-4BB1-A794-FE1619565480}"
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Discover", "Discover", "{6222D77D-F58A-4FCC-80D8-6233D42A7860}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SocialNetwork.Services.Discover", "Services\Discover\SocialNetwork.Services.Discover\SocialNetwork.Services.Discover.csproj", "{D0377169-52C1-4294-91CA-C97C0C19B293}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "SocialNetwork.Services.Discover", "Services\Discover\SocialNetwork.Services.Discover\SocialNetwork.Services.Discover.csproj", "{D0377169-52C1-4294-91CA-C97C0C19B293}"
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Story", "Story", "{94439132-E969-4D2F-B379-559BA372AB1B}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SocialNetwork.Services.Story", "Services\Story\SocialNetwork.Services.Story\SocialNetwork.Services.Story.csproj", "{FA80CA32-BE43-422D-8855-81B11ACA853F}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "SocialNetwork.Services.Story", "Services\Story\SocialNetwork.Services.Story\SocialNetwork.Services.Story.csproj", "{FA80CA32-BE43-422D-8855-81B11ACA853F}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SocialNetwork.IdentityServer.Core", "IdentityServer\SocialNetwork.IdentityServer.Core\SocialNetwork.IdentityServer.Core.csproj", "{92B98CF9-00DC-4EE2-831E-C21F116C0ED0}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "SocialNetwork.IdentityServer.Core", "IdentityServer\SocialNetwork.IdentityServer.Core\SocialNetwork.IdentityServer.Core.csproj", "{92B98CF9-00DC-4EE2-831E-C21F116C0ED0}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SocialNetwork.IdentityServer.Data", "SocialNetwork.IdentityServer.Data\SocialNetwork.IdentityServer.Data.csproj", "{8779E9E5-11A5-4B06-8806-52BA1B008983}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "SocialNetwork.IdentityServer.Data", "SocialNetwork.IdentityServer.Data\SocialNetwork.IdentityServer.Data.csproj", "{8779E9E5-11A5-4B06-8806-52BA1B008983}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SocialNetworkIdentityServer.Service", "IdentityServer\SocialNetworkIdentityServer.Service\SocialNetworkIdentityServer.Service.csproj", "{2330ECC4-12A1-4DDF-AE10-2EE70337BFAE}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "SocialNetworkIdentityServer.Service", "IdentityServer\SocialNetworkIdentityServer.Service\SocialNetworkIdentityServer.Service.csproj", "{2330ECC4-12A1-4DDF-AE10-2EE70337BFAE}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SocialNetwork.Web.Core", "Frontends\SocialNetwork.Web.Core\SocialNetwork.Web.Core.csproj", "{4D6C0BDB-16A2-4DE6-BC4A-425208B6247F}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SocialNetwork.Web.Data", "SocialNetwork.Web.Data\SocialNetwork.Web.Data.csproj", "{B90C585B-839B-4B1C-A912-4F1DEF0F8A17}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SocialNetwork.Web.Service", "SocialNetwork.Web.Service\SocialNetwork.Web.Service.csproj", "{D109E38B-3E69-4894-90F8-4DF61F25909F}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -154,6 +160,18 @@ Global
 		{2330ECC4-12A1-4DDF-AE10-2EE70337BFAE}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{2330ECC4-12A1-4DDF-AE10-2EE70337BFAE}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{2330ECC4-12A1-4DDF-AE10-2EE70337BFAE}.Release|Any CPU.Build.0 = Release|Any CPU
+		{4D6C0BDB-16A2-4DE6-BC4A-425208B6247F}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{4D6C0BDB-16A2-4DE6-BC4A-425208B6247F}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{4D6C0BDB-16A2-4DE6-BC4A-425208B6247F}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{4D6C0BDB-16A2-4DE6-BC4A-425208B6247F}.Release|Any CPU.Build.0 = Release|Any CPU
+		{B90C585B-839B-4B1C-A912-4F1DEF0F8A17}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{B90C585B-839B-4B1C-A912-4F1DEF0F8A17}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{B90C585B-839B-4B1C-A912-4F1DEF0F8A17}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{B90C585B-839B-4B1C-A912-4F1DEF0F8A17}.Release|Any CPU.Build.0 = Release|Any CPU
+		{D109E38B-3E69-4894-90F8-4DF61F25909F}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{D109E38B-3E69-4894-90F8-4DF61F25909F}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{D109E38B-3E69-4894-90F8-4DF61F25909F}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{D109E38B-3E69-4894-90F8-4DF61F25909F}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -188,6 +206,9 @@ Global
 		{92B98CF9-00DC-4EE2-831E-C21F116C0ED0} = {88544639-6DCB-4A5F-A910-7ABF8C54A729}
 		{8779E9E5-11A5-4B06-8806-52BA1B008983} = {88544639-6DCB-4A5F-A910-7ABF8C54A729}
 		{2330ECC4-12A1-4DDF-AE10-2EE70337BFAE} = {88544639-6DCB-4A5F-A910-7ABF8C54A729}
+		{4D6C0BDB-16A2-4DE6-BC4A-425208B6247F} = {0E8BB422-E580-4405-8D35-77EBD404B042}
+		{B90C585B-839B-4B1C-A912-4F1DEF0F8A17} = {0E8BB422-E580-4405-8D35-77EBD404B042}
+		{D109E38B-3E69-4894-90F8-4DF61F25909F} = {0E8BB422-E580-4405-8D35-77EBD404B042}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {1B5139B3-0A01-479B-A61A-8B150C8675AE}

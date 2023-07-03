@@ -6,4 +6,8 @@
     <ImplicitUsings>enable</ImplicitUsings>
   </PropertyGroup>
 
+  <ItemGroup>
+    <ProjectReference Include="..\..\SocialNetwork.Web.Service\SocialNetwork.Web.Service.csproj" />
+  </ItemGroup>
+
 </Project>
