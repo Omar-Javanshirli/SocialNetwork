@@ -1,13 +1,13 @@
-<Project Sdk="Microsoft.NET.Sdk.Web">
+<Project Sdk="Microsoft.NET.Sdk">
 
   <PropertyGroup>
     <TargetFramework>net7.0</TargetFramework>
-    <Nullable>enable</Nullable>
     <ImplicitUsings>enable</ImplicitUsings>
+    <Nullable>enable</Nullable>
   </PropertyGroup>
 
   <ItemGroup>
-    <ProjectReference Include="..\..\SocialNetwork.Web.Service\SocialNetwork.Web.Service.csproj" />
+    <ProjectReference Include="..\Frontends\SocialNetwork.Web.Core\SocialNetwork.Web.Core.csproj" />
   </ItemGroup>
 
 </Project>
