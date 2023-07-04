@@ -10,4 +10,8 @@
     <PackageReference Include="IdentityModel" Version="6.1.0" />
   </ItemGroup>
 
+  <ItemGroup>
+    <ProjectReference Include="..\..\Shared\SocialNetwork.Shared\SocialNetwork.Shared.csproj" />
+  </ItemGroup>
+
 </Project>

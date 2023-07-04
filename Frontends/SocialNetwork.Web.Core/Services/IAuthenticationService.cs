@@ -1,12 +1,15 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+﻿using IdentityModel.Client;
+using SocialNetwork.Shared.Dtos;
+using SocialNetwork.Web.Core.Models.Input;
 
 namespace SocialNetwork.Web.Core.Services
 {
-    internal interface IAuthenticationService
+    public interface IAuthenticationService
     {
+        Task<TokenResponse> GetAccessTokenByRefreshTokenAsync();
+        Task RevokeRefreshTokenAsync();
+        Task<String> GetTokenByClientAsync();
+        Task GetRefreshTokenAsync();
+        Task<Response<bool>> SigninAsync(SignInInput signInInput);
     }
 }
