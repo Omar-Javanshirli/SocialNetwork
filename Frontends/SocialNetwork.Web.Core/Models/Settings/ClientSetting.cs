@@ -1,12 +1,15 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-
-namespace SocialNetwork.Web.Core.Models.Settings
+﻿namespace SocialNetwork.Web.Core.Models.Settings
 {
-    internal class ClientSettings
+    public class ClientSetting
     {
+        public Client WebClient { get; set; } = null!;
+        public Client WebClientForUser { get; set; } = null!;
+
+
+        public class Client
+        {
+            public string ClientId { get; set; } = null!;
+            public string ClientSecret { get; set; } = null!;
+        }
     }
 }
