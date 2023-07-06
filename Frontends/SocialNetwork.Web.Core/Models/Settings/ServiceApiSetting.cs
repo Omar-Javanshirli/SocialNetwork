@@ -4,9 +4,10 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace SocialNetwork.Web.Core.UnitOfWorks
+namespace SocialNetwork.Web.Core.Models.Settings
 {
-    internal interface IUnityOfWork
+    public class ServiceApiSetting
     {
+        public string MyProperty { get; set; }
     }
 }
