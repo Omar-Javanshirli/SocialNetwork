@@ -13,9 +13,6 @@ builder.Services.AddHttpContextAccessor();
 builder.Services.AddAccessTokenManagement();
 
 
-builder.Services.AddAuthentication(CookieAuthenticationDefaults.AuthenticationScheme)
-    .()
-
 var app = builder.Build();
 
 // Configure the HTTP request pipeline.
