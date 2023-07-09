@@ -1,5 +1,9 @@
-﻿using Microsoft.AspNetCore.Mvc;
+﻿using Microsoft.AspNetCore.Authentication;
+using Microsoft.AspNetCore.Authentication.Cookies;
+using Microsoft.AspNetCore.Mvc;
+using SocialNetwork.Web.Core.Models.Input;
 using SocialNetwork.Web.Core.Services;
+using IAuthenticationService = SocialNetwork.Web.Core.Services.IAuthenticationService;
 
 namespace SocialNetwork.WEB.Controllers
 {
@@ -12,9 +16,38 @@ namespace SocialNetwork.WEB.Controllers
             this.authenticationService = authenticationService;
         }
 
+        [HttpGet]
         public IActionResult SignIn()
         {
             return View();
+        }
+
+        [HttpPost]
+        public async Task<IActionResult> SignIn(SignInInput request)
+        {
+            if (ModelState is { IsValid: false })
+                return View();
+
+            var response   = await this.authenticationService.SigninAsync(request);
+
+            if(response is { IsSuccessful:false})
+            {
+                response.Errors.ForEach(x =>
+                {
+                    ModelState.AddModelError(string.Empty, x);
+                });
+
+                return View();
+            }
+
+            return RedirectToAction(nameof(Index), "Home");
+        }
+
+        public async Task<IActionResult> Logout()
+        {
+            await HttpContext.SignOutAsync(CookieAuthenticationDefaults.AuthenticationScheme);
+            await this.authenticationService.RevokeRefreshTokenAsync();
+            return RedirectToAction(nameof(HomeController.Index),"Home");
         }
     }
 }

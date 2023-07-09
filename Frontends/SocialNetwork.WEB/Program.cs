@@ -1,3 +1,4 @@
+using Microsoft.AspNetCore.Authentication.Cookies;
 using SocialNetwork.Web.Core.Models.Settings;
 using SocialNetwork.Web.Core.Services;
 using SocialNetwork.Web.Service.Services;
@@ -14,6 +15,15 @@ builder.Services.AddHttpContextAccessor();
 builder.Services.AddAccessTokenManagement();
 
 builder.Services.AddScoped<IAuthenticationService, AuthenticationService>();
+
+builder.Services.AddAuthentication(CookieAuthenticationDefaults.AuthenticationScheme)
+    .AddCookie(CookieAuthenticationDefaults.AuthenticationScheme, opts =>
+    {
+        opts.LoginPath = "/Auth/SignIn";
+        opts.ExpireTimeSpan = TimeSpan.FromDays(60);
+        opts.SlidingExpiration = true;
+        opts.Cookie.Name = "webcookie";
+    });
 
 var app = builder.Build();
 

@@ -156,6 +156,13 @@ namespace SocialNetwork.Web.Service.Services
             return newToken.AccessToken!;
         }
 
+        public async Task<Response<bool>> LogoutAsync()
+        {
+            await httpContextAccessor.HttpContext!.SignOutAsync(CookieAuthenticationDefaults.AuthenticationScheme);
+            await RevokeRefreshTokenAsync();
+            return Response<bool>.Success(200);
+        }
+
         public async Task RevokeRefreshTokenAsync()
         {
             var disco = await this.httpClient.GetDiscoveryDocumentAsync(new DiscoveryDocumentRequest
