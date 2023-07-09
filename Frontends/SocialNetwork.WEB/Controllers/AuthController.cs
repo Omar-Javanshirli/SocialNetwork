@@ -40,6 +40,12 @@ namespace SocialNetwork.WEB.Controllers
             return RedirectToAction(nameof(Index), "Home");
         }
 
+        [HttpGet]
+        public IActionResult SignUp()
+        {
+            return View();
+        }
+
         public async Task<IActionResult> Logout()
         {
             var response = await this.authenticationService.LogoutAsync();
