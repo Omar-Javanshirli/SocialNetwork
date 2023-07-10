@@ -46,6 +46,12 @@ namespace SocialNetwork.WEB.Controllers
             return View();
         }
 
+        [HttpPost]
+        public async Task<IActionResult>SignUp(SignUpInput request)
+        {
+            return View();
+        }
+
         public async Task<IActionResult> Logout()
         {
             var response = await this.authenticationService.LogoutAsync();

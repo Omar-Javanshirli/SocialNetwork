@@ -252,5 +252,10 @@ namespace SocialNetwork.Web.Service.Services
 
             return Response<bool>.Success(200);
         }
+
+        public Task<Response<bool>> SignUp(SignUpInput signUpInput)
+        {
+            throw new NotImplementedException();
+        }
     }
 }
