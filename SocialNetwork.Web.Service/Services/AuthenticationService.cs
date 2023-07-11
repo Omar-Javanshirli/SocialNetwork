@@ -13,6 +13,7 @@ using SocialNetwork.Web.Core.Models.Input;
 using SocialNetwork.Web.Core.Models.Settings;
 using System.Globalization;
 using System.Security.Claims;
+using System.Text;
 using System.Text.Json;
 
 namespace SocialNetwork.Web.Service.Services
@@ -216,7 +217,7 @@ namespace SocialNetwork.Web.Service.Services
             if (token is { IsError: true })
             {
                 var responseContent = await token.HttpResponse.Content.ReadAsStringAsync();
-                var errorDto = JsonSerializer.Deserialize<ErrorDto>
+                var errorDto = System.Text.Json.JsonSerializer.Deserialize<ErrorDto>
                     (responseContent, new JsonSerializerOptions { PropertyNameCaseInsensitive = true });
 
                 return Response<bool>.Fail(errorDto!.Errors, 400);
@@ -256,7 +257,7 @@ namespace SocialNetwork.Web.Service.Services
             return Response<bool>.Success(200);
         }
 
-        public async Task<Response<bool>> SignUp(SignUpInput signUpInput)
+        public async Task<List<string>> SignUp(SignUpInput signUpInput)
         {
             var disco = await this.httpClient.GetDiscoveryDocumentAsync(this.serviceApiSetting.IdentityBaseUri);
 
@@ -275,8 +276,20 @@ namespace SocialNetwork.Web.Service.Services
             if(token is { IsError:true})
                 throw token.Exception!;
 
-            var stringContent=new StringContent(JsonConvert)
-            
+            var stringContent = new StringContent(JsonConvert.SerializeObject
+                (signUpInput), Encoding.UTF8, "application/json");
+
+            this.httpClient.SetBearerToken(token.AccessToken!);
+            var response = await httpClient.PostAsync("https://localhost:5001/api/user/signup", stringContent);
+
+            if(response is { IsSuccessStatusCode:false})
+            {
+                var errors  =JsonConvert.DeserializeObject<List<string>>
+                    (await  response.Content.ReadAsStringAsync());
+
+                return errors!;
+            }
+            return null;
         }
     }
 }
