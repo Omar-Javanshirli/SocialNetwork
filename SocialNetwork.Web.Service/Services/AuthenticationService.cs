@@ -2,9 +2,12 @@
 using IdentityModel.Client;
 using Microsoft.AspNetCore.Authentication;
 using Microsoft.AspNetCore.Authentication.Cookies;
+using Microsoft.AspNetCore.Components.Forms;
 using Microsoft.AspNetCore.Http;
+using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.Options;
 using Microsoft.IdentityModel.Protocols.OpenIdConnect;
+using Newtonsoft.Json;
 using SocialNetwork.Shared.Dtos;
 using SocialNetwork.Web.Core.Models.Input;
 using SocialNetwork.Web.Core.Models.Settings;
@@ -253,9 +256,27 @@ namespace SocialNetwork.Web.Service.Services
             return Response<bool>.Success(200);
         }
 
-        public Task<Response<bool>> SignUp(SignUpInput signUpInput)
+        public async Task<Response<bool>> SignUp(SignUpInput signUpInput)
         {
-            throw new NotImplementedException();
+            var disco = await this.httpClient.GetDiscoveryDocumentAsync(this.serviceApiSetting.IdentityBaseUri);
+
+            if (disco is { IsError: true })
+                throw disco.Exception!;
+
+            var clientCredentialTokenRequest = new ClientCredentialsTokenRequest()
+            {
+                ClientId = this.clientSetting.WebClientForUser.ClientId,
+                ClientSecret = this.clientSetting.WebClientForUser.ClientSecret,
+                Address = disco.TokenEndpoint
+            };
+
+            var token = await this.httpClient.RequestClientCredentialsTokenAsync(clientCredentialTokenRequest);
+
+            if(token is { IsError:true})
+                throw token.Exception!;
+
+            var stringContent=new StringContent(JsonConvert)
+            
         }
     }
 }
