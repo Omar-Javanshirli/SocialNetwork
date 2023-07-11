@@ -12,6 +12,6 @@ namespace SocialNetwork.Web.Core.Services
         Task GetRefreshTokenAsync();
         Task<Response<bool>> SigninAsync(SignInInput signInInput);
         Task<Response<bool>> SignUp(SignUpInput signUpInput);
-        Task<Response<bool>> LogoutAsync();
+        Task<Response<bool>> LogoutAsync(); 
     }
 }

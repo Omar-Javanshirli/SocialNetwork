@@ -6,12 +6,12 @@ using SocialNetwork.Web.Core.Services;
 
 namespace SocialNetwork.Web.Service.Services
 {
-    public class ApiResourceHttpClient : IApiResourceHttpClientService
+    public class ApiResourceHttpClientServices : IApiResourceHttpClientService
     {
         private readonly IHttpContextAccessor contextAccessor;
         private HttpClient client;
 
-        public ApiResourceHttpClient(IHttpContextAccessor contextAccessor)
+        public ApiResourceHttpClientServices(IHttpContextAccessor contextAccessor)
         {
             this.contextAccessor = contextAccessor;
             this.client = new HttpClient();
@@ -22,6 +22,6 @@ namespace SocialNetwork.Web.Service.Services
             var accessToken = await this.contextAccessor.HttpContext!.GetTokenAsync(OpenIdConnectParameterNames.AccessToken);
             this.client.SetBearerToken(accessToken!);
             return client;
-        }
+        } 
     }
 }
