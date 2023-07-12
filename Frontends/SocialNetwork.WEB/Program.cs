@@ -1,6 +1,7 @@
 using Microsoft.AspNetCore.Authentication.Cookies;
 using SocialNetwork.Web.Core.Models.Settings;
 using SocialNetwork.Web.Core.Services;
+using SocialNetwork.Web.Service.Extensions;
 using SocialNetwork.Web.Service.Services;
 
 var builder = WebApplication.CreateBuilder(args);
@@ -8,17 +9,13 @@ var builder = WebApplication.CreateBuilder(args);
 // Add services to the container.
 builder.Services.AddControllersWithViews();
 
-builder.Services.AddHttpContextAccessor();
-
 builder.Services.Configure<ClientSetting>(builder.Configuration.GetSection("ClientSetting"));
 builder.Services.Configure<ServiceApiSetting>(builder.Configuration.GetSection("ServiceApiSetting"));
 
 builder.Services.AddHttpContextAccessor();
 builder.Services.AddAccessTokenManagement();
 
-builder.Services.AddScoped<IAuthenticationService, AuthenticationService>();
-builder.Services.AddScoped<IApiResourceHttpClientService,ApiResourceHttpClientServices>();
-
+builder.Services.AddHttpClientServices(builder.Configuration);
 builder.Services.AddAuthentication(CookieAuthenticationDefaults.AuthenticationScheme)
     .AddCookie(CookieAuthenticationDefaults.AuthenticationScheme, opts =>
     {

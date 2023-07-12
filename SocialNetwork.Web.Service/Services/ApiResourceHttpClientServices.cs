@@ -35,7 +35,5 @@ namespace SocialNetwork.Web.Service.Services
             this.client.SetBearerToken(accessToken!);
             return client;
         }
-
-      
     }
 }
