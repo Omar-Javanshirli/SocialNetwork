@@ -3,14 +3,13 @@ using Microsoft.AspNetCore.Identity;
 using Microsoft.AspNetCore.Mvc;
 using SocialNetwork.IdentityServer.Core.Models;
 using SocialNetwork.IdentityServer.Core.Models.Input;
+using SocialNetwork.Shared.ControllerBases;
 using System.Linq;
 using System.Threading.Tasks;
 
 namespace SocialNetwork.IdentityServer.Controllers
 {
-    [Route("api/[controller]/[action]")]
-    [ApiController]
-    public class AuthController : ControllerBase
+    public class AuthController : CustomBaseController
     {
         private readonly UserManager<ApplicationUser> userManager;
 
@@ -26,13 +25,12 @@ namespace SocialNetwork.IdentityServer.Controllers
 
             applicationUser.UserName = request.Username;
             applicationUser.Email = request.Email;
-
             var result = await this.userManager.CreateAsync(applicationUser, request.Password);
 
             if (!result.Succeeded)
                 return BadRequest(result.Errors.Select(x => x.Description));
 
-            return Ok("signup calisti");
+            return Ok();
         }
     }
 }

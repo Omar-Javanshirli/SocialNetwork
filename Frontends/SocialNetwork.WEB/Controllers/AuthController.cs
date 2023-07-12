@@ -1,6 +1,5 @@
 ﻿using Microsoft.AspNetCore.Mvc;
 using SocialNetwork.Web.Core.Models.Input;
-using SocialNetwork.Web.Core.Services;
 using IAuthenticationService = SocialNetwork.Web.Core.Services.IAuthenticationService;
 
 namespace SocialNetwork.WEB.Controllers
