@@ -257,9 +257,12 @@ namespace SocialNetwork.Web.Service.Services
             return Response<bool>.Success(200);
         }
 
-        public async Task<List<string>> SignUp(SignUpInput signUpInput)
+        public async Task<List<string>> SignUpAsync(Core.Models.Input.SignUpInput signUpInput)
         {
-            var disco = await this.httpClient.GetDiscoveryDocumentAsync(this.serviceApiSetting.IdentityBaseUri);
+            var disco = await this.httpClient.GetDiscoveryDocumentAsync(new DiscoveryDocumentRequest
+            {
+                Address = this.serviceApiSetting.IdentityBaseUri
+            });
 
             if (disco is { IsError: true })
                 throw disco.Exception!;
@@ -273,19 +276,19 @@ namespace SocialNetwork.Web.Service.Services
 
             var token = await this.httpClient.RequestClientCredentialsTokenAsync(clientCredentialTokenRequest);
 
-            if(token is { IsError:true})
+            if (token is { IsError: true })
                 throw token.Exception!;
 
             var stringContent = new StringContent(JsonConvert.SerializeObject
                 (signUpInput), Encoding.UTF8, "application/json");
 
             this.httpClient.SetBearerToken(token.AccessToken!);
-            var response = await httpClient.PostAsync("https://localhost:5001/api/user/signup", stringContent);
+            var response = await httpClient.PostAsync("https://localhost:5001/api/auth/signup", stringContent);
 
-            if(response is { IsSuccessStatusCode:false})
+            if (response is { IsSuccessStatusCode: false })
             {
-                var errors  =JsonConvert.DeserializeObject<List<string>>
-                    (await  response.Content.ReadAsStringAsync());
+                var errors = JsonConvert.DeserializeObject<List<string>>
+                    (await response.Content.ReadAsStringAsync());
 
                 return errors!;
             }

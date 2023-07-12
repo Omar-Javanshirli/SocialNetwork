@@ -1,5 +1,6 @@
 ﻿using Microsoft.AspNetCore.Mvc;
 using SocialNetwork.Web.Core.Models.Input;
+using SocialNetwork.Web.Core.Services;
 using IAuthenticationService = SocialNetwork.Web.Core.Services.IAuthenticationService;
 
 namespace SocialNetwork.WEB.Controllers
@@ -49,7 +50,20 @@ namespace SocialNetwork.WEB.Controllers
         [HttpPost]
         public async Task<IActionResult>SignUp(SignUpInput request)
         {
-            return View();
+            if(ModelState is { IsValid: false })
+                return View();
+
+            var result = await this.authenticationService.SignUpAsync(request);
+
+            if (result != null)
+            {
+                result.ForEach(x =>
+                {
+                    ModelState.AddModelError(string.Empty, x);
+                });
+            }
+
+            return RedirectToAction(nameof(Index),"Home");
         }
 
         public async Task<IActionResult> Logout()

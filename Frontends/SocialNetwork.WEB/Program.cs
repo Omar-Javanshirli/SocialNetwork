@@ -8,6 +8,8 @@ var builder = WebApplication.CreateBuilder(args);
 // Add services to the container.
 builder.Services.AddControllersWithViews();
 
+builder.Services.AddHttpContextAccessor();
+
 builder.Services.Configure<ClientSetting>(builder.Configuration.GetSection("ClientSetting"));
 builder.Services.Configure<ServiceApiSetting>(builder.Configuration.GetSection("ServiceApiSetting"));
 
@@ -41,6 +43,7 @@ app.UseStaticFiles();
 
 app.UseRouting();
 
+app.UseAuthentication();
 app.UseAuthorization();
 
 app.MapControllerRoute(

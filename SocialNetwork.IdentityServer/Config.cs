@@ -35,7 +35,7 @@ namespace SocialNetwork.IdentityServer
                     ClientName="Social_Network_Web",
                     ClientId="Web_Client_ForUser",
                     ClientSecrets={new Secret("secret".Sha256())},
-                    AllowedGrantTypes=GrantTypes.ResourceOwnerPassword,
+                    AllowedGrantTypes=GrantTypes.ResourceOwnerPasswordAndClientCredentials,
                     AllowOfflineAccess=true,
                     AllowedScopes=
                     {
