@@ -3,13 +3,8 @@ using Microsoft.AspNetCore.Authentication;
 using Microsoft.AspNetCore.Http;
 using Microsoft.Extensions.Options;
 using Microsoft.IdentityModel.Protocols.OpenIdConnect;
-using Newtonsoft.Json;
-using SocialNetwork.IdentityServer.Core.Models.Input;
 using SocialNetwork.Web.Core.Models.Settings;
 using SocialNetwork.Web.Core.Services;
-using System.Diagnostics;
-using System.Net.Http;
-using System.Text;
 
 namespace SocialNetwork.Web.Service.Services
 {
