@@ -7,4 +7,10 @@
     <Nullable>enable</Nullable>
   </PropertyGroup>
 
+  <ItemGroup>
+    <Folder Include="Entities\CommentsEntity\" />
+    <Folder Include="Entities\FriendsEntity\" />
+    <Folder Include="Entities\PostsEntity\" />
+  </ItemGroup>
+
 </Project>
