@@ -1,4 +1,9 @@
-﻿namespace B._SocialNetwork.Services.Graph.Core.Entities
+﻿using B._SocialNetwork.Services.Graph.Core.Entities.CommentsEntity;
+using B._SocialNetwork.Services.Graph.Core.Entities.FriendsEntity;
+using B._SocialNetwork.Services.Graph.Core.Entities.PostsEntity;
+using B._SocialNetwork.Services.Graph.Core.Enums;
+
+namespace B._SocialNetwork.Services.Graph.Core.Entities
 {
     public class User : BaseEntity
     {

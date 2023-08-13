@@ -1,12 +1,9 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-
-namespace B._SocialNetwork.Services.Graph.Core.Entities.FriendsEntity
+﻿namespace B._SocialNetwork.Services.Graph.Core.Entities.FriendsEntity
 {
-    internal class Follower
+    public class Follower : BaseEntity
     {
+        public bool IsRecaiverOrSender { get; set; }
+        public string UserId { get; set; } = null!;
+        public User User { get; set; } = null!;
     }
 }
