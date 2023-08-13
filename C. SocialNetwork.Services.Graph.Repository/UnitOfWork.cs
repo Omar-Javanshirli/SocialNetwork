@@ -48,7 +48,6 @@ namespace C._SocialNetwork.Services.Graph.Repository
         public void Dispose()
         {
             Dispose(true);
-            //GC.SuppressFinalize(this);
         }
 
         protected virtual void Dispose(bool disposing)
@@ -56,7 +55,7 @@ namespace C._SocialNetwork.Services.Graph.Repository
             if (!disposed)
             {
                 if (disposing)
-                    sqlTransaction = new NoContent;
+                    sqlTransaction = null;
 
                 if (sqlConnection.State == System.Data.ConnectionState.Open)
                     sqlConnection.Close();

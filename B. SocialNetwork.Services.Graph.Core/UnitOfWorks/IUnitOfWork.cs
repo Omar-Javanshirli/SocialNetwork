@@ -2,7 +2,7 @@
 
 namespace B._SocialNetwork.Services.Graph.Core.UnitOfWorks
 {
-    public interface IUnitOfWorkForDapper : IDisposable
+    public interface IUnitOfWork : IDisposable
     {
         SqlTransaction BeginTransaction();
         SqlConnection GetConnection();
