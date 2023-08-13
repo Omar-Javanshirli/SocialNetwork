@@ -5,6 +5,7 @@ namespace C._SocialNetwork.Services.Graph.Repository.Repositories
 {
     public class GenericRepository<T> : IGenericRepository<T> where T : class
     {
+
         public Task AddAsync(T entity)
         {
             throw new NotImplementedException();

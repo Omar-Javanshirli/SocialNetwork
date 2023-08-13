@@ -48,10 +48,6 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Search", "Search", "{6FAABF
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "SocialNetwork.Services.Search", "Services\Search\SocialNetwork.Services.Search\SocialNetwork.Services.Search.csproj", "{B6D25D16-A445-43B6-95A1-626DF014B87A}"
 EndProject
-Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Profil", "Profil", "{F88906FA-4CBA-4F63-9B56-F87E2248F71B}"
-EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "SocialNetwork.Services.Profil", "Services\Profil\SocialNetwork.Services.Profil\SocialNetwork.Services.Profil.csproj", "{1B359124-330C-4EC8-9D3E-EEDAF5BD26D0}"
-EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Message", "Message", "{C56CB008-58AC-4160-BCE8-2CF1E8B30626}"
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "SocialNetwork.Services.Message", "Services\Messages\SocialNetwork.Services.Message\SocialNetwork.Services.Message.csproj", "{65755A30-7DF4-4FD0-9CB6-FE4A67C64156}"
@@ -80,13 +76,13 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "SocialNetwork.Web.Data", "S
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "SocialNetwork.Web.Service", "SocialNetwork.Web.Service\SocialNetwork.Web.Service.csproj", "{D109E38B-3E69-4894-90F8-4DF61F25909F}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "A. SocialNetwork.Services.Graph", "A. SocialNetwork.Services.Graph\A. SocialNetwork.Services.Graph.csproj", "{63077A88-C366-479A-A644-94305BDF85F8}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "A. SocialNetwork.Services.Graph", "A. SocialNetwork.Services.Graph\A. SocialNetwork.Services.Graph.csproj", "{63077A88-C366-479A-A644-94305BDF85F8}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "B. SocialNetwork.Services.Graph.Core", "B. SocialNetwork.Services.Graph.Core\B. SocialNetwork.Services.Graph.Core.csproj", "{7CAF1840-5463-4C4B-B028-C0508BE54280}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "B. SocialNetwork.Services.Graph.Core", "B. SocialNetwork.Services.Graph.Core\B. SocialNetwork.Services.Graph.Core.csproj", "{7CAF1840-5463-4C4B-B028-C0508BE54280}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "C. SocialNetwork.Services.Graph.Repository", "C. SocialNetwork.Services.Graph.Repository\C. SocialNetwork.Services.Graph.Repository.csproj", "{1074C2DB-46D9-4CBA-A238-AD12C5B35C73}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "C. SocialNetwork.Services.Graph.Repository", "C. SocialNetwork.Services.Graph.Repository\C. SocialNetwork.Services.Graph.Repository.csproj", "{1074C2DB-46D9-4CBA-A238-AD12C5B35C73}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "D. SocialNetwork.Services.Graph.Service", "D. SocialNetwork.Services.Graph.Service\D. SocialNetwork.Services.Graph.Service.csproj", "{2AD2DA02-6DAD-4939-8A13-AAB18ACE6AB5}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "D. SocialNetwork.Services.Graph.Service", "D. SocialNetwork.Services.Graph.Service\D. SocialNetwork.Services.Graph.Service.csproj", "{2AD2DA02-6DAD-4939-8A13-AAB18ACE6AB5}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -130,10 +126,6 @@ Global
 		{B6D25D16-A445-43B6-95A1-626DF014B87A}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{B6D25D16-A445-43B6-95A1-626DF014B87A}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{B6D25D16-A445-43B6-95A1-626DF014B87A}.Release|Any CPU.Build.0 = Release|Any CPU
-		{1B359124-330C-4EC8-9D3E-EEDAF5BD26D0}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{1B359124-330C-4EC8-9D3E-EEDAF5BD26D0}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{1B359124-330C-4EC8-9D3E-EEDAF5BD26D0}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{1B359124-330C-4EC8-9D3E-EEDAF5BD26D0}.Release|Any CPU.Build.0 = Release|Any CPU
 		{65755A30-7DF4-4FD0-9CB6-FE4A67C64156}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
 		{65755A30-7DF4-4FD0-9CB6-FE4A67C64156}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{65755A30-7DF4-4FD0-9CB6-FE4A67C64156}.Release|Any CPU.ActiveCfg = Release|Any CPU
@@ -210,8 +202,6 @@ Global
 		{44144263-01D8-4FE8-9E31-98D952BCDB97} = {1C0B13CA-7820-4AD5-A3D8-DE489F8A373D}
 		{6FAABFBD-40A7-4DB3-AEE1-0E01367553CE} = {75FEDEEA-7FE0-4611-BF12-5D3EFD436F8A}
 		{B6D25D16-A445-43B6-95A1-626DF014B87A} = {6FAABFBD-40A7-4DB3-AEE1-0E01367553CE}
-		{F88906FA-4CBA-4F63-9B56-F87E2248F71B} = {75FEDEEA-7FE0-4611-BF12-5D3EFD436F8A}
-		{1B359124-330C-4EC8-9D3E-EEDAF5BD26D0} = {F88906FA-4CBA-4F63-9B56-F87E2248F71B}
 		{C56CB008-58AC-4160-BCE8-2CF1E8B30626} = {75FEDEEA-7FE0-4611-BF12-5D3EFD436F8A}
 		{65755A30-7DF4-4FD0-9CB6-FE4A67C64156} = {C56CB008-58AC-4160-BCE8-2CF1E8B30626}
 		{A8C84B9C-5B7F-4597-B75A-22DE085A4624} = {75FEDEEA-7FE0-4611-BF12-5D3EFD436F8A}
