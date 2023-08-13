@@ -76,11 +76,11 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "SocialNetwork.IdentityServe
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "SocialNetworkIdentityServer.Service", "IdentityServer\SocialNetworkIdentityServer.Service\SocialNetworkIdentityServer.Service.csproj", "{2330ECC4-12A1-4DDF-AE10-2EE70337BFAE}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SocialNetwork.Web.Core", "Frontends\SocialNetwork.Web.Core\SocialNetwork.Web.Core.csproj", "{4D6C0BDB-16A2-4DE6-BC4A-425208B6247F}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "SocialNetwork.Web.Core", "Frontends\SocialNetwork.Web.Core\SocialNetwork.Web.Core.csproj", "{4D6C0BDB-16A2-4DE6-BC4A-425208B6247F}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SocialNetwork.Web.Data", "SocialNetwork.Web.Data\SocialNetwork.Web.Data.csproj", "{B90C585B-839B-4B1C-A912-4F1DEF0F8A17}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "SocialNetwork.Web.Data", "SocialNetwork.Web.Data\SocialNetwork.Web.Data.csproj", "{B90C585B-839B-4B1C-A912-4F1DEF0F8A17}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SocialNetwork.Web.Service", "SocialNetwork.Web.Service\SocialNetwork.Web.Service.csproj", "{D109E38B-3E69-4894-90F8-4DF61F25909F}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "SocialNetwork.Web.Service", "SocialNetwork.Web.Service\SocialNetwork.Web.Service.csproj", "{D109E38B-3E69-4894-90F8-4DF61F25909F}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
