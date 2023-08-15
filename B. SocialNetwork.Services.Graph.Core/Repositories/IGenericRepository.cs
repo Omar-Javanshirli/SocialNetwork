@@ -11,7 +11,7 @@ namespace B._SocialNetwork.Services.Graph.Core.Repositories
         Task AddRangeAsync(IEnumerable<T> entities);
         void RemoveRange(IEnumerable<T> entities);
         IQueryable<T> Where(Expression<Func<T, bool>> expression);
-        IQueryable<T> GetAll();
+        Task<IEnumerable<T>> GetAllAsync();
         Task<bool> AnyAsync(Expression<Func<T, bool>> expression);
     }
 }

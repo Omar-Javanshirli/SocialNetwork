@@ -1,21 +1,18 @@
 ﻿using B._SocialNetwork.Services.Graph.Core.Repositories;
 using Dapper;
-using Microsoft.Data.SqlClient;
-using Microsoft.Extensions.Configuration;
 using System.Data;
 using System.Linq.Expressions;
 
 namespace C._SocialNetwork.Services.Graph.Repository.Repositories
 {
-    public class GenericRepository<T> : IGenericRepository<T> where T : class
+    public class GenericRepository<T> : BaseSqlRepository, IGenericRepository<T> where T : class
     {
         private readonly IDbConnection _connection;
-        private readonly IConfiguration _configuration;
 
-        public GenericRepository(IConfiguration configuration)
+        public GenericRepository(string connectionString) 
+            : base(connectionString)
         {
-            _configuration = configuration;
-            _connection = new SqlConnection(_configuration.GetConnectionString("DefaultConn"));
+            _connection = OpenConnection();
         }
 
         public async Task AddAsync(T entity)
@@ -31,77 +28,65 @@ namespace C._SocialNetwork.Services.Graph.Repository.Repositories
 
         public async Task AddRangeAsync(IEnumerable<T> entities)
         {
+            string tableName = typeof(T).Name;
+            var properties = typeof(T).GetProperties();
+            var columnNames = string.Join(",", properties.Select(property => property.Name));
+            var parameterNames = string.Join(",", properties.Select(property => "@" + property.Name));
+
             foreach (var entity in entities)
-                await AddAsync(entity);
-        }
-
-        private string GenerateSqlFromExpression(Expression<Func<T, bool>> expression)
-        {
-            if (expression.Body is BinaryExpression binaryExpression)
             {
-                var left = binaryExpression.Left;
-                var right = binaryExpression.Right;
-
-                var leftMember = (MemberExpression)left;
-                var rightConstant = (ConstantExpression)right;
-
-                var columnName = leftMember.Member.Name;
-                var value = rightConstant.Value;
-
-                return $"{columnName} = '{value}'";
+                string query = $"INSERT INTO {tableName} VALUES ({parameterNames})";
+                await _connection.ExecuteAsync(query, entity);
             }
-
-            throw new NotSupportedException("Expression type not supported.");
         }
 
         public async Task<bool> AnyAsync(Expression<Func<T, bool>> expression)
         {
-            var tableName = typeof(T).Name;
-
-            // LINQ ifadesini Lambda ifadesine dönüştürme
-            var lambda = expression.Compile();
-            var idColumnName = "Id";
-
-            var query = $"SELECT COUNT(*) FROM {tableName} WHERE {idColumnName} IN " +
-                        "(SELECT {idColumnName} FROM {tableName} " +
-                        "WHERE {GenerateSqlFromExpression(lambda)})";
-
-            var count = await _connection.ExecuteScalarAsync<int>(query);
-
-            return count > 0;
+            return await _connection.QueryFirstOrDefaultAsync<bool>
+                ($"SELECT COUNT(*) FROM {typeof(T).Name} WHERE {expression}", expression);
         }
 
-        public  IQueryable<T> GetAll()
+        public async Task<IEnumerable<T>> GetAllAsync()
         {
-            var tableName=typeof(T).Name;
-            var query = $"SELECT * FROM {tableName}";
-            var result = _connection.Query<T>(query);
-            return result.AsQueryable();
+            string query = $"SELECT * FROM {typeof(T).Name}";
+            return await _connection.QueryAsync<T>(query);
         }
 
-        public Task<T> GetByIdAsync(string id)
+        public async Task<T> GetByIdAsync(string id)
         {
-            throw new NotImplementedException();
+            string query = $"SELECT * FROM {typeof(T).Name} WHERE Id = @Id";
+            return await _connection.QueryFirstOrDefaultAsync<T>(query, new { Id = id });
         }
 
         public void Remove(T entity)
         {
-            throw new NotImplementedException();
+            string query = $"DELETE FROM {typeof(T).Name} WHERE Id = @Id";
+            _connection.Execute(query, entity);
         }
 
         public void RemoveRange(IEnumerable<T> entities)
         {
-            throw new NotImplementedException();
+            string tableName = typeof(T).Name;
+
+            foreach (var entity in entities)
+            {
+                string query = $"DELETE FROM {tableName} WHERE Id = @Id";
+                _connection.Execute(query, entity);
+            }
         }
 
         public void Update(T entity)
         {
-            throw new NotImplementedException();
+            var properties = typeof(T).GetProperties();
+            var columnNames = string.Join(",", properties.Select(property => property.Name));
+            string query = $"UPDATE {typeof(T).Name} SET Name = {columnNames} WHERE Id = @Id";
+
+            _connection.Execute(query, entity);
         }
 
         public IQueryable<T> Where(Expression<Func<T, bool>> expression)
         {
-            throw new NotImplementedException();
+            return _connection.Query<T>($"SELECT * FROM {typeof(T).Name}").AsQueryable().Where(expression);
         }
     }
 }

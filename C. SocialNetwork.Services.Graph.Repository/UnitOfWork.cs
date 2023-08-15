@@ -1,76 +1,20 @@
-﻿using B._SocialNetwork.Services.Graph.Core.UnitOfWorks;
-using Microsoft.Data.SqlClient;
+﻿using B._SocialNetwork.Services.Graph.Core.Repositories;
+using B._SocialNetwork.Services.Graph.Core.UnitOfWorks;
+using C._SocialNetwork.Services.Graph.Repository.Repositories;
 using Microsoft.Extensions.Configuration;
-using SocialNetwork.Shared.Dtos;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace C._SocialNetwork.Services.Graph.Repository
 {
     public class UnitOfWork : IUnitOfWork
     {
         private readonly string _connectionString;
-        private bool disposed = false;
-
-        private SqlTransaction sqlTransaction = null!;
-        private SqlConnection sqlConnection;
 
         public UnitOfWork(IConfiguration configuration)
         {
-            _connectionString = configuration.GetConnectionString("DefaultConnection")!;
-            sqlConnection = new SqlConnection(_connectionString);
+            _connectionString = (configuration.GetConnectionString("DefaultConnection"))!;
         }
 
-        public SqlTransaction BeginTransaction()
-        {
-            if (sqlConnection.State != System.Data.ConnectionState.Open)
-            {
-                sqlConnection.Open();
-                sqlTransaction = sqlConnection.BeginTransaction();
-            }
-
-            return sqlTransaction;
-        }
-
-        public SqlConnection GetConnection()
-        {
-            return sqlConnection;
-        }
-
-        public SqlTransaction GetTransaction()
-        {
-            return sqlTransaction;
-        }
-
-        public void Dispose()
-        {
-            Dispose(true);
-        }
-
-        protected virtual void Dispose(bool disposing)
-        {
-            if (!disposed)
-            {
-                if (disposing)
-                    sqlTransaction = null;
-
-                if (sqlConnection.State == System.Data.ConnectionState.Open)
-                    sqlConnection.Close();
-
-                disposed = true;
-            }
-        }
-
-        public void SaveChanges()
-        {
-            sqlTransaction.Commit();
-            sqlConnection.Close();
-            sqlTransaction = null;
-        }
-
-        ~UnitOfWork() { Dispose(false); }
+        public GenericRepository<dynamic> _genericRepository;
+        public IGenericRepository<dynamic> genericRepository => _genericRepository ??= new GenericRepository<dynamic>(_connectionString);
     }
 }
