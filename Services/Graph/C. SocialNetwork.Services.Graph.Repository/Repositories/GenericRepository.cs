@@ -9,7 +9,7 @@ namespace C._SocialNetwork.Services.Graph.Repository.Repositories
     {
         private readonly IDbConnection _connection;
 
-        public GenericRepository(string connectionString) 
+        public GenericRepository(string connectionString)
             : base(connectionString)
         {
             _connection = OpenConnection();

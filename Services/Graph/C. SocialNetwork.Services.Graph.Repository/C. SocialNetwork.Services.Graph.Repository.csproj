@@ -9,12 +9,12 @@
 
   <ItemGroup>
     <PackageReference Include="Dapper.Contrib" Version="2.0.78" />
+    <PackageReference Include="Microsoft.Data.SqlClient" Version="5.1.1" />
     <PackageReference Include="Microsoft.Extensions.Configuration.Abstractions" Version="7.0.0" />
   </ItemGroup>
 
   <ItemGroup>
-    <ProjectReference Include="..\B. SocialNetwork.Services.Graph.Core\B. SocialNetwork.Services.Graph.Core.csproj" />
-    <ProjectReference Include="..\Shared\SocialNetwork.Shared\SocialNetwork.Shared.csproj" />
+    <ProjectReference Include="..\B .SocialNetwork.Servicec.Graph.Core\B .SocialNetwork.Servicec.Graph.Core.csproj" />
   </ItemGroup>
 
 </Project>

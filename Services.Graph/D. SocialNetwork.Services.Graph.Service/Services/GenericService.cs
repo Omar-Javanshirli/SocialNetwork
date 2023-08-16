@@ -48,11 +48,11 @@ namespace D._SocialNetwork.Services.Graph.Service.Services
 
         public void Remove(T entity)
         {
-           _repository.Remove(entity);
+            _repository.Remove(entity);
         }
 
         public void RemoveRange(IEnumerable<T> entities)
-        { 
+        {
             _repository.RemoveRange(entities);
         }
 

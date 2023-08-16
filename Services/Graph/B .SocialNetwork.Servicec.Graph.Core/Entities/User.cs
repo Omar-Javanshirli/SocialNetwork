@@ -2,6 +2,8 @@
 using B._SocialNetwork.Services.Graph.Core.Entities.FriendsEntity;
 using B._SocialNetwork.Services.Graph.Core.Entities.PostsEntity;
 using B._SocialNetwork.Services.Graph.Core.Enums;
+using System.Reflection;
+using System.Xml.Linq;
 
 namespace B._SocialNetwork.Services.Graph.Core.Entities
 {
