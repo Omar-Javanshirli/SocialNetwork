@@ -72,18 +72,6 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "SocialNetworkIdentityServer
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "SocialNetwork.Web.Core", "Frontends\SocialNetwork.Web.Core\SocialNetwork.Web.Core.csproj", "{4D6C0BDB-16A2-4DE6-BC4A-425208B6247F}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "SocialNetwork.Web.Data", "SocialNetwork.Web.Data\SocialNetwork.Web.Data.csproj", "{B90C585B-839B-4B1C-A912-4F1DEF0F8A17}"
-EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "SocialNetwork.Web.Service", "SocialNetwork.Web.Service\SocialNetwork.Web.Service.csproj", "{D109E38B-3E69-4894-90F8-4DF61F25909F}"
-EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "A. SocialNetwork.Services.Graph", "A. SocialNetwork.Services.Graph\A. SocialNetwork.Services.Graph.csproj", "{63077A88-C366-479A-A644-94305BDF85F8}"
-EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "B. SocialNetwork.Services.Graph.Core", "B. SocialNetwork.Services.Graph.Core\B. SocialNetwork.Services.Graph.Core.csproj", "{7CAF1840-5463-4C4B-B028-C0508BE54280}"
-EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "C. SocialNetwork.Services.Graph.Repository", "C. SocialNetwork.Services.Graph.Repository\C. SocialNetwork.Services.Graph.Repository.csproj", "{1074C2DB-46D9-4CBA-A238-AD12C5B35C73}"
-EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "D. SocialNetwork.Services.Graph.Service", "D. SocialNetwork.Services.Graph.Service\D. SocialNetwork.Services.Graph.Service.csproj", "{2AD2DA02-6DAD-4939-8A13-AAB18ACE6AB5}"
-EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
