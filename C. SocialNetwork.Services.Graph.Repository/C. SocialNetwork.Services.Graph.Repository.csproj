@@ -1,0 +1,20 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFramework>net7.0</TargetFramework>
+    <RootNamespace>C._SocialNetwork.Services.Graph.Repository</RootNamespace>
+    <ImplicitUsings>enable</ImplicitUsings>
+    <Nullable>enable</Nullable>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <PackageReference Include="Dapper.Contrib" Version="2.0.78" />
+    <PackageReference Include="Microsoft.Extensions.Configuration.Abstractions" Version="7.0.0" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\B. SocialNetwork.Services.Graph.Core\B. SocialNetwork.Services.Graph.Core.csproj" />
+    <ProjectReference Include="..\Shared\SocialNetwork.Shared\SocialNetwork.Shared.csproj" />
+  </ItemGroup>
+
+</Project>
