@@ -2,13 +2,13 @@
 
   <PropertyGroup>
     <TargetFramework>net7.0</TargetFramework>
-    <RootNamespace>D._SocialNetwork.Services.Graph.Service</RootNamespace>
+    <RootNamespace>D._SocialNetwork.Services.Graph.Services</RootNamespace>
     <ImplicitUsings>enable</ImplicitUsings>
     <Nullable>enable</Nullable>
   </PropertyGroup>
 
   <ItemGroup>
-    <ProjectReference Include="..\..\Services\Graph\C. SocialNetwork.Services.Graph.Repository\C. SocialNetwork.Services.Graph.Repository.csproj" />
+    <ProjectReference Include="..\B .SocialNetwork.Servicec.Graph.Core\B .SocialNetwork.Servicec.Graph.Core.csproj" />
   </ItemGroup>
 
 </Project>

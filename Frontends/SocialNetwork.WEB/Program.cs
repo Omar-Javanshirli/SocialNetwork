@@ -1,27 +1,7 @@
-using Microsoft.AspNetCore.Authentication.Cookies;
-using SocialNetwork.Web.Core.Models.Settings;
-using SocialNetwork.Web.Service.Extensions;
-
 var builder = WebApplication.CreateBuilder(args);
 
 // Add services to the container.
 builder.Services.AddControllersWithViews();
-
-builder.Services.Configure<ClientSetting>(builder.Configuration.GetSection("ClientSetting"));
-builder.Services.Configure<ServiceApiSetting>(builder.Configuration.GetSection("ServiceApiSetting"));
-
-builder.Services.AddHttpContextAccessor();
-builder.Services.AddAccessTokenManagement();
-
-builder.Services.AddHttpClientServices(builder.Configuration);
-builder.Services.AddAuthentication(CookieAuthenticationDefaults.AuthenticationScheme)
-    .AddCookie(CookieAuthenticationDefaults.AuthenticationScheme, opts =>
-    {
-        opts.LoginPath = "/Auth/SignIn";
-        opts.ExpireTimeSpan = TimeSpan.FromDays(60);
-        opts.SlidingExpiration = true;
-        opts.Cookie.Name = "webcookie";
-    });
 
 var app = builder.Build();
 
@@ -38,7 +18,6 @@ app.UseStaticFiles();
 
 app.UseRouting();
 
-app.UseAuthentication();
 app.UseAuthorization();
 
 app.MapControllerRoute(
