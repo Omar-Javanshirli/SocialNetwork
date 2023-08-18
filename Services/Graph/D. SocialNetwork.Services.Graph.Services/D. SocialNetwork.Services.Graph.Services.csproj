@@ -11,4 +11,14 @@
     <ProjectReference Include="..\B .SocialNetwork.Servicec.Graph.Core\B .SocialNetwork.Servicec.Graph.Core.csproj" />
   </ItemGroup>
 
+  <ItemGroup>
+    <Folder Include="CQRS\User\Commands\Response\" />
+    <Folder Include="CQRS\User\Commands\Request\" />
+    <Folder Include="CQRS\User\Handlers\CommandHandlers\" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <PackageReference Include="MediatR" Version="12.1.1" />
+  </ItemGroup>
+
 </Project>
