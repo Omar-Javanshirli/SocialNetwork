@@ -1,4 +1,5 @@
-﻿using Microsoft.AspNetCore.Http;
+﻿using MediatR;
+using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 
 namespace A._SocialNetwork.Services.Graph.Controllers
@@ -7,5 +8,6 @@ namespace A._SocialNetwork.Services.Graph.Controllers
     [ApiController]
     public class GraphController : ControllerBase
     {
+       
     }
 }
