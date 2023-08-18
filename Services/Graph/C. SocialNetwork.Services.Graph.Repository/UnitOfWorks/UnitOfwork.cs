@@ -21,7 +21,6 @@ namespace C._SocialNetwork.Services.Graph.Repository
             return new GenericRepository<T>(_connectionString);
         }
 
-
         public IUserRepository userRepository => _userRepository ??= new UserRepository(_connectionString);
     }
 }

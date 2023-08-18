@@ -8,10 +8,6 @@
   </PropertyGroup>
 
   <ItemGroup>
-    <ProjectReference Include="..\B .SocialNetwork.Servicec.Graph.Core\B .SocialNetwork.Servicec.Graph.Core.csproj" />
-  </ItemGroup>
-
-  <ItemGroup>
     <Folder Include="CQRS\User\Commands\Response\" />
     <Folder Include="CQRS\User\Commands\Request\" />
     <Folder Include="CQRS\User\Handlers\CommandHandlers\" />
@@ -19,6 +15,11 @@
 
   <ItemGroup>
     <PackageReference Include="MediatR" Version="12.1.1" />
+    <PackageReference Include="MediatR.Extensions.Microsoft.DependencyInjection" Version="11.1.0" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\C. SocialNetwork.Services.Graph.Repository\C. SocialNetwork.Services.Graph.Repository.csproj" />
   </ItemGroup>
 
 </Project>
