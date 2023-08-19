@@ -5,7 +5,7 @@ namespace B._SocialNetwork.Services.Graph.Core.UnitOfWorks
 {
     public interface IUnitOfWork
     {
-        public IGenericRepository<dynamic> genericRepository { get; }
+        IGenericRepository<T> GetGenericRepository<T>() where T : class;
         public IUserRepository userRepository { get; }
     }
 }
