@@ -1,30 +1,24 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-
-namespace SocialNetwork.Web.Core.Models.Settings
+﻿namespace SocialNetwork.Web.Core.Models.Settings
 {
     public class ServiceApiSetting
     {
-        public string IdentityBaseUri { get; set; }
-        public string GetewayBaseUri { get; set; }
-        public ServiceApi Discover { get; set; }
-        public ServiceApi Feed { get; set; }
-        public ServiceApi Graph { get; set; }
-        public ServiceApi Live { get; set; }
-        public ServiceApi Media { get; set; }
-        public ServiceApi Message { get; set; }
-        public ServiceApi Notification { get; set; }
-        public ServiceApi Post { get; set; }
-        public ServiceApi Search { get; set; }
-        public ServiceApi Profil { get; set; }
-        public ServiceApi Story { get; set; }
+        public string IdentityBaseUri { get; set; } = null!;
+        public string GetewayBaseUri { get; set; } = null!;
+        public ServiceApi Discover { get; set; }=null!;
+        public ServiceApi Feed { get; set; }= null!;
+        public ServiceApi Graph { get; set; } = null!;
+        public ServiceApi Live { get; set; } = null!;
+        public ServiceApi Media { get; set; } = null!;
+        public ServiceApi Message { get; set; } = null!;
+        public ServiceApi Notification { get; set; } = null!;
+        public ServiceApi Post { get; set; } = null!;
+        public ServiceApi Search { get; set; } = null!;
+        public ServiceApi Profil { get; set; } = null!;
+        public ServiceApi Story { get; set; } = null!;
 
         public class ServiceApi
         {
-            public string Path { get; set; }
+            public string Path { get; set; } = null!;
         }
     }
 }
