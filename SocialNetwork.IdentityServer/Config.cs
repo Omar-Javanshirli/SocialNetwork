@@ -1,6 +1,5 @@
 ﻿using IdentityServer4;
 using IdentityServer4.Models;
-using SocialNetwork.IdentityServer.Core.Constants;
 using System;
 using System.Collections.Generic;
 
@@ -11,7 +10,8 @@ namespace SocialNetwork.IdentityServer
         public static IEnumerable<ApiResource> ApiResources =>
             new ApiResource[]
             {
-                new ApiResource(Permission.GraphPermission.resourseGraph){Scopes={Permission.GraphPermission.graphFullpermission}},
+                new ApiResource(Permission.GraphPermission.resourseGraph){Scopes={Permission.GraphPermission.graphFullpermission }},
+                new ApiResource(Permission.GatewayPermission.ResourceGateway){Scopes={Permission.GatewayPermission.GatewayFullpermission }},
                 new ApiResource(IdentityServerConstants.LocalApi.ScopeName)
             };
 
@@ -27,6 +27,7 @@ namespace SocialNetwork.IdentityServer
             new ApiScope[]
             {
                 new ApiScope(Permission.GraphPermission.graphFullpermission,"Full Access to Graph API"),
+                new ApiScope(Permission.GatewayPermission.GatewayFullpermission,"Full Access to Gateway API"),
                 new ApiScope(IdentityServerConstants.LocalApi.ScopeName)
             };
 
@@ -47,7 +48,8 @@ namespace SocialNetwork.IdentityServer
                         IdentityServerConstants.StandardScopes.OpenId,
                         IdentityServerConstants.StandardScopes.Profile,
                         IdentityServerConstants.StandardScopes.OfflineAccess,
-                        Permission.GraphPermission.graphFullpermission
+                        Permission.GraphPermission.graphFullpermission,
+                        Permission.GatewayPermission.GatewayFullpermission
                     },
                     AccessTokenLifetime=1*60*60,
                     RefreshTokenExpiration=TokenExpiration.Absolute,
