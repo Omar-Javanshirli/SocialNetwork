@@ -12,4 +12,8 @@
     <PackageReference Include="Ocelot" Version="19.0.2" />
   </ItemGroup>
 
+  <ItemGroup>
+    <ProjectReference Include="..\..\Shared\SocialNetwork.Shared\SocialNetwork.Shared.csproj" />
+  </ItemGroup>
+
 </Project>
