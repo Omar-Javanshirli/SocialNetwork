@@ -14,7 +14,13 @@
             ClientId = "Web_Client_ForUser",
             ClientSecret = "secret"
         };
+    }
 
+    public static class GatewayPermission
+    {
+        public const string ResourceGateway = "resource_gateway";
+        public const string GatewayFullpermission = "gateway_fullpermission";
+        public const string GatewayAuthenticationScheme = "GatewayAuthenticationScheme";
     }
 
     public class Client
