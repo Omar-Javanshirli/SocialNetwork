@@ -70,19 +70,19 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "B .SocialNetwork.Servicec.G
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "C. SocialNetwork.Services.Graph.Repository", "Services\Graph\C. SocialNetwork.Services.Graph.Repository\C. SocialNetwork.Services.Graph.Repository.csproj", "{86F5895A-37F1-4403-AA2E-FAB6E6D08AC2}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "D. SocialNetwork.Services.Graph.Services", "Services\Graph\D. SocialNetwork.Services.Graph.Services\D. SocialNetwork.Services.Graph.Services.csproj", "{E68CB160-7D74-45CF-994B-59823B7343A0}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "D. SocialNetwork.Services.Graph.Services", "Services\Graph\D. SocialNetwork.Services.Graph.Services\D. SocialNetwork.Services.Graph.Services.csproj", "{E68CB160-7D74-45CF-994B-59823B7343A0}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SocialNetwork.WEB", "Frontends\SocialNetwork.WEB\SocialNetwork.WEB.csproj", "{D6E71392-13D3-4E78-A81D-D988721B3C0F}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "SocialNetwork.WEB", "Frontends\SocialNetwork.WEB\SocialNetwork.WEB.csproj", "{D6E71392-13D3-4E78-A81D-D988721B3C0F}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SocialNetwork.WEB.Core", "Frontends\SocialNetwork.WEB.Core\SocialNetwork.WEB.Core.csproj", "{896BBACB-7545-445D-82F1-C059A3EEC51F}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "SocialNetwork.WEB.Core", "Frontends\SocialNetwork.WEB.Core\SocialNetwork.WEB.Core.csproj", "{896BBACB-7545-445D-82F1-C059A3EEC51F}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SocialNetwork.WEB.Data", "Frontends\SocialNetwork.WEB.Data\SocialNetwork.WEB.Data.csproj", "{1DB1C396-5175-47E3-AFE6-9054FECB5294}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "SocialNetwork.WEB.Data", "Frontends\SocialNetwork.WEB.Data\SocialNetwork.WEB.Data.csproj", "{1DB1C396-5175-47E3-AFE6-9054FECB5294}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SocialNetwork.WEB.Service", "Frontends\SocialNetwork.WEB.Service\SocialNetwork.WEB.Service.csproj", "{849DF1FA-5467-46D1-972D-0CE335758C8D}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "SocialNetwork.WEB.Service", "Frontends\SocialNetwork.WEB.Service\SocialNetwork.WEB.Service.csproj", "{849DF1FA-5467-46D1-972D-0CE335758C8D}"
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Gateway", "Gateway", "{FF7410AF-0D55-4C9D-BDBF-F23B566B5084}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SocialNetwork.Gateway", "Gateway\SocialNetwork.Gateway\SocialNetwork.Gateway.csproj", "{4C2C0CFE-AD7C-4A34-9CE3-45BB0181BA91}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SocialNetwork.Gateway", "Gateway\SocialNetwork.Gateway\SocialNetwork.Gateway.csproj", "{DB3FB7F6-17C5-4C71-BC86-4EAB73C8D009}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -178,10 +178,10 @@ Global
 		{849DF1FA-5467-46D1-972D-0CE335758C8D}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{849DF1FA-5467-46D1-972D-0CE335758C8D}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{849DF1FA-5467-46D1-972D-0CE335758C8D}.Release|Any CPU.Build.0 = Release|Any CPU
-		{4C2C0CFE-AD7C-4A34-9CE3-45BB0181BA91}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{4C2C0CFE-AD7C-4A34-9CE3-45BB0181BA91}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{4C2C0CFE-AD7C-4A34-9CE3-45BB0181BA91}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{4C2C0CFE-AD7C-4A34-9CE3-45BB0181BA91}.Release|Any CPU.Build.0 = Release|Any CPU
+		{DB3FB7F6-17C5-4C71-BC86-4EAB73C8D009}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{DB3FB7F6-17C5-4C71-BC86-4EAB73C8D009}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{DB3FB7F6-17C5-4C71-BC86-4EAB73C8D009}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{DB3FB7F6-17C5-4C71-BC86-4EAB73C8D009}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -219,7 +219,7 @@ Global
 		{896BBACB-7545-445D-82F1-C059A3EEC51F} = {0E8BB422-E580-4405-8D35-77EBD404B042}
 		{1DB1C396-5175-47E3-AFE6-9054FECB5294} = {0E8BB422-E580-4405-8D35-77EBD404B042}
 		{849DF1FA-5467-46D1-972D-0CE335758C8D} = {0E8BB422-E580-4405-8D35-77EBD404B042}
-		{4C2C0CFE-AD7C-4A34-9CE3-45BB0181BA91} = {FF7410AF-0D55-4C9D-BDBF-F23B566B5084}
+		{DB3FB7F6-17C5-4C71-BC86-4EAB73C8D009} = {FF7410AF-0D55-4C9D-BDBF-F23B566B5084}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {1B5139B3-0A01-479B-A61A-8B150C8675AE}
