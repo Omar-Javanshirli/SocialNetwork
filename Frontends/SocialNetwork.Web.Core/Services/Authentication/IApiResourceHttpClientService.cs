@@ -1,4 +1,4 @@
-﻿namespace SocialNetwork.Web.Core.Services
+﻿namespace SocialNetwork.WEB.Core.Services.Authentication
 {
     public interface IApiResourceHttpClientService
     {
