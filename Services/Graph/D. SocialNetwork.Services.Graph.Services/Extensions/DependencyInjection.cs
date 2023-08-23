@@ -8,13 +8,14 @@ using Microsoft.AspNetCore.Authentication.JwtBearer;
 using Microsoft.AspNetCore.Authorization;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
+using SocialNetwork.Shared.Services;
 using System.IdentityModel.Tokens.Jwt;
 
 public static class DependencyInjection
 {
     public static IServiceCollection AddApplicationServices(this IServiceCollection services, IConfiguration configuration)
     {
-        services.AddAutoMapper(typeof(MapProfil));
+        services.AddHttpContextAccessor();
 
         var requireAuthorizePolicy = new AuthorizationPolicyBuilder().RequireAuthenticatedUser().Build();
         JwtSecurityTokenHandler.DefaultInboundClaimTypeMap.Remove("sub");
@@ -25,9 +26,12 @@ public static class DependencyInjection
             options.RequireHttpsMetadata = false;
         });
 
+        services.AddAutoMapper(typeof(MapProfil));
         services.AddMediatR(typeof(D._SocialNetwork.Services.Graph.Services.CQRS.User.Handlers.QueryHandlers.GetAllUserPostsQueryHandler).Assembly);
+
         services.AddSingleton<IUnitOfWork, UnitOfWork>();
         services.AddScoped(typeof(IGenericService<>), typeof(GenericServices<>));
+        services.AddScoped<ISharedIdentityService, SharedIdentityService>();
 
         return services;
     }
