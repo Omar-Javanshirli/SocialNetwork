@@ -2,7 +2,7 @@
 {
     public static class GraphPermission
     {
-        public const string resourseGraph = "resourse_graph";
+        public const string resourseGraph = "resource_graph";
         public const string graphFullpermission = "graph_fullpermission";
     }
 
