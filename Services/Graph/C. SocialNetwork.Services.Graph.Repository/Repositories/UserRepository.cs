@@ -1,6 +1,5 @@
 ﻿using B._SocialNetwork.Services.Graph.Core.Entities.FriendsEntity;
 using B._SocialNetwork.Services.Graph.Core.Entities.PostsEntity;
-using B._SocialNetwork.Services.Graph.Core.Repositories;
 using B_.SocialNetwork.Servicec.Graph.Core.Entities.PostEntity;
 using B_.SocialNetwork.Servicec.Graph.Core.Repositories;
 using Dapper;
