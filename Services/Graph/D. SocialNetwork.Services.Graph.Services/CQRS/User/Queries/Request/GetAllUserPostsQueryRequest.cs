@@ -8,7 +8,7 @@ namespace D._SocialNetwork.Services.Graph.Services.CQRS.User.Queries.Request
     {
         public string UserId { get; set; }
 
-        public GetAllUserPostsQueryRequest(string userId)
+        public GetAllUserPostsQueryRequest(string userId )
         {
             UserId = userId;
         }
