@@ -7,5 +7,6 @@ namespace B._SocialNetwork.Services.Graph.Core.UnitOfWorks
     {
         IGenericRepository<T> GetGenericRepository<T>() where T : class;
         public IUserRepository userRepository { get; }
+        public IPostRepository postRepository { get; }
     }
 }
