@@ -1,5 +1,6 @@
 ﻿using AutoMapper;
 using B._SocialNetwork.Services.Graph.Core.Entities.PostsEntity;
+using D._SocialNetwork.Services.Graph.Services.CQRS.Post.Queries.Response;
 using D._SocialNetwork.Services.Graph.Services.CQRS.User.Queries.Response;
 
 namespace D._SocialNetwork.Services.Graph.Services.Mapping
@@ -9,6 +10,7 @@ namespace D._SocialNetwork.Services.Graph.Services.Mapping
         public MapProfil()
         {
             CreateMap<Post, GetAllUserPostsQueryResponse>().ReverseMap();
+            CreateMap<PostLike, GetAllUsersPostLikeQueryResponse>().ReverseMap();
         }
     }
 }

@@ -1,12 +1,9 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+﻿using B._SocialNetwork.Services.Graph.Core.Entities.PostsEntity;
 
 namespace B_.SocialNetwork.Servicec.Graph.Core.Repositories
 {
-    internal interface IPostRepository
+    public interface IPostRepository
     {
+        Task<List<PostLike>> GetPostLikesAsync(string postId);
     }
 }

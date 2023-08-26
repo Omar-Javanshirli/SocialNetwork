@@ -1,4 +1,5 @@
-﻿using D._SocialNetwork.Services.Graph.Services.CQRS.User.Queries.Request;
+﻿using D._SocialNetwork.Services.Graph.Services.CQRS.Post.Queries.Request;
+using D._SocialNetwork.Services.Graph.Services.CQRS.User.Queries.Request;
 using MediatR;
 using Microsoft.AspNetCore.Mvc;
 using SocialNetwork.Shared.ControllerBases;
@@ -6,7 +7,7 @@ using SocialNetwork.Shared.Services;
 
 namespace A._SocialNetwork.Services.Graph.Controllers
 {
-    [Route("api/[controller]")]
+    [Route("api/[controller]/[action]")]
     [ApiController]
     public class GraphController : CustomBaseController
     {
@@ -22,6 +23,13 @@ namespace A._SocialNetwork.Services.Graph.Controllers
         public async Task<IActionResult> GetAllUserPosts()
         {
             var request = new GetAllUserPostsQueryRequest(_sharedIdentityService.GetUserId);
+            return CreateActionResult(await _mediator.Send(request));
+        }
+
+        [HttpPost]
+        public async Task<IActionResult> GetAllUsersPostLike(string postId)
+        {
+            var request = new GetAllUsersPostLikeQueryRequest(postId);
             return CreateActionResult(await _mediator.Send(request));
         }
     }
