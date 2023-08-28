@@ -1,7 +1,9 @@
-﻿namespace SocialNetwork.Shared.Services
+﻿using System;
+
+namespace SocialNetwork.Shared.Services
 {
     public interface ISharedIdentityService
     {
-        public string GetUserId {  get; }
+        public Guid GetUserId {  get; }
     }
 }

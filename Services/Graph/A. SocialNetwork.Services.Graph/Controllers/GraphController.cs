@@ -27,7 +27,7 @@ namespace A._SocialNetwork.Services.Graph.Controllers
         }
 
         [HttpPost]
-        public async Task<IActionResult> GetAllUsersPostLike(string postId)
+        public async Task<IActionResult> GetAllUsersPostLike(Guid postId)
         {
             var request = new GetAllUsersPostLikeQueryRequest(postId);
             return CreateActionResult(await _mediator.Send(request));

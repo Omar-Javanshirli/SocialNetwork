@@ -6,7 +6,7 @@ namespace B_.SocialNetwork.Servicec.Graph.Core.Repositories
 {
     public interface IUserRepository
     {
-        Task<List<Post>> GetAllUserPostsAsync(string userId);
+        Task<List<Post>> GetAllUserPostsAsync(Guid userId);
         Task<List<Highlight>>GetAllUserHighlightsAsync(string userId);
         Task <List<Follower>>GetAllUserFollowersAsync(string userId);
         Task<List<Following>>GetAllUserFollowingsAsync(string userId);
