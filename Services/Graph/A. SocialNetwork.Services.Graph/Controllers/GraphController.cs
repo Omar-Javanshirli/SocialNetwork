@@ -1,4 +1,5 @@
 ﻿using D._SocialNetwork.Services.Graph.Services.CQRS.Comment.Handlers.QueryHandlers;
+using D._SocialNetwork.Services.Graph.Services.CQRS.Comment.Quries.Request;
 using D._SocialNetwork.Services.Graph.Services.CQRS.Post.Queries.Request;
 using D._SocialNetwork.Services.Graph.Services.CQRS.User.Queries.Request;
 using MediatR;
@@ -27,17 +28,17 @@ namespace A._SocialNetwork.Services.Graph.Controllers
             return CreateActionResult(await _mediator.Send(request));
         }
 
-        //[HttpPost]
-        //public async Task<IActionResult> GetAllUsersPostLike(Guid postId)
-        //{
-        //    var request = new GetAllUsersPostLikeQueryRequest(postId);
-        //    return CreateActionResult(await _mediator.Send(request));
-        //}
+        [HttpPost]
+        public async Task<IActionResult> GetAllUsersPostLike(Guid postId)
+        {
+            var request = new GetAllUsersPostLikeQueryRequest(postId);
+            return CreateActionResult(await _mediator.Send(request));
+        }
 
         [HttpPost]
         public async Task<IActionResult> GetAllCommentForPost(Guid postId)
         {
-            var request = new GetAllCommentPostHandler(postId);
+            var request = new GetAllCommentPostRequest(postId);
             return CreateActionResult(await _mediator.Send(request));
         }
     }
