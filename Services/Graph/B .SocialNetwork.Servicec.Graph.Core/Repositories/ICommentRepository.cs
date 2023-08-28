@@ -1,12 +1,9 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+﻿using B._SocialNetwork.Services.Graph.Core.Entities.CommentsEntity;
 
 namespace B_.SocialNetwork.Servicec.Graph.Core.Repositories
 {
-    internal interface ICommentRepository
+    public interface ICommentRepository
     {
+        Task<List<Comment>> GetAllComment(Guid postId);
     }
 }
