@@ -4,7 +4,7 @@
     {
         public bool IsImage { get; set; }
         public string Url { get; set; } = null!;
-        public string PostId { get; set; } = null!;
+        public Guid PostId { get; set; }
         public Post Post { get; set; } = null!;
     }
 }

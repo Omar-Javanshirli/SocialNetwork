@@ -6,9 +6,9 @@ namespace D._SocialNetwork.Services.Graph.Services.CQRS.User.Queries.Request
 {
     public class GetAllUserPostsQueryRequest : IRequest<Response<IEnumerable<GetAllUserPostsQueryResponse>>>
     {
-        public string UserId { get; set; }
+        public Guid UserId { get; set; }
 
-        public GetAllUserPostsQueryRequest(string userId )
+        public GetAllUserPostsQueryRequest(Guid userId )
         {
             UserId = userId;
         }

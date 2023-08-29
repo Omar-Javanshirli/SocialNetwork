@@ -10,6 +10,8 @@ namespace C._SocialNetwork.Services.Graph.Repository
     {
         private readonly string _connectionString;
         public UserRepository _userRepository;
+        public PostRepository _postRepository;
+        public CommentRepository _commentRepository;
 
         public UnitOfWork(IConfiguration configuration)
         {
@@ -22,5 +24,9 @@ namespace C._SocialNetwork.Services.Graph.Repository
         }
 
         public IUserRepository userRepository => _userRepository ??= new UserRepository(_connectionString);
+
+        public IPostRepository postRepository => _postRepository ??= new PostRepository(_connectionString);
+
+        public ICommentRepository commentRepository => _commentRepository??= new CommentRepository(_connectionString);
     }
 }

@@ -28,7 +28,7 @@ namespace C._SocialNetwork.Services.Graph.Repository.Repositories
             throw new NotImplementedException();
         }
 
-        public async Task<List<Post>> GetAllUserPostsAsync(string userId)
+        public async Task<List<Post>> GetAllUserPostsAsync(Guid userId)
         {
             string sqlQuery = $"SELECT * FROM UserPostsView WHERE UserId = @userId";
             using var con = OpenConnection();
