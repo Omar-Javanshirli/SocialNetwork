@@ -41,5 +41,12 @@ namespace A._SocialNetwork.Services.Graph.Controllers
             var request = new GetAllCommentPostRequest(postId);
             return CreateActionResult(await _mediator.Send(request));
         }
+
+        [HttpPost]
+        public async Task<IActionResult> GetAllCommentForLike(Guid commentId)
+        {
+            var request = new GetAllCommentLikeRequest(commentId);
+            return CreateActionResult(await _mediator.Send(request));
+        }
     }
 }

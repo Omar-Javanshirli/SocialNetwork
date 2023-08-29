@@ -17,5 +17,13 @@ namespace C._SocialNetwork.Services.Graph.Repository.Repositories
             var result = await con.QueryAsync<Comment>(sqlQuery, new { postId });
             return result.AsList();
         }
+
+        public async Task<List<CommentLike>> GetAllCommentLike(Guid commentId)
+        {
+            string sqlQuery = $"SELECT * FROM GetCommentLike WHERE CommentId={commentId}";
+            using var con = OpenConnection();
+            var result = await con.QueryAsync<CommentLike>(sqlQuery, new { commentId });
+            return result.AsList();
+        }
     }
 }

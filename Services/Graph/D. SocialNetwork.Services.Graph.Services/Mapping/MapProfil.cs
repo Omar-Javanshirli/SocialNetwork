@@ -14,6 +14,7 @@ namespace D._SocialNetwork.Services.Graph.Services.Mapping
             CreateMap<Post, GetAllUserPostsQueryResponse>().ReverseMap();
             CreateMap<PostLike, GetAllUsersPostLikeQueryResponse>().ReverseMap();
             CreateMap<Comment, GetAllCommentPostResponse>().ReverseMap();
+            CreateMap<CommentLike,GetAllCommentLikeResponse>().ReverseMap();
         }
     }
 }

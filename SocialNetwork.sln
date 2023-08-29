@@ -82,7 +82,12 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "SocialNetwork.WEB.Service",
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Gateway", "Gateway", "{FF7410AF-0D55-4C9D-BDBF-F23B566B5084}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SocialNetwork.Gateway", "Gateway\SocialNetwork.Gateway\SocialNetwork.Gateway.csproj", "{DB3FB7F6-17C5-4C71-BC86-4EAB73C8D009}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "SocialNetwork.Gateway", "Gateway\SocialNetwork.Gateway\SocialNetwork.Gateway.csproj", "{DB3FB7F6-17C5-4C71-BC86-4EAB73C8D009}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution Items", "{E9800838-C3F3-4975-B75C-BE3D07EEF1A4}"
+	ProjectSection(SolutionItems) = preProject
+		.editorconfig = .editorconfig
+	EndProjectSection
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
