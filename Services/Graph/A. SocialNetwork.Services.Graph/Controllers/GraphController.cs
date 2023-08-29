@@ -1,5 +1,4 @@
-﻿using D._SocialNetwork.Services.Graph.Services.CQRS.Comment.Handlers.QueryHandlers;
-using D._SocialNetwork.Services.Graph.Services.CQRS.Comment.Quries.Request;
+﻿using D._SocialNetwork.Services.Graph.Services.CQRS.Comment.Quries.Request;
 using D._SocialNetwork.Services.Graph.Services.CQRS.Post.Queries.Request;
 using D._SocialNetwork.Services.Graph.Services.CQRS.User.Queries.Request;
 using MediatR;
