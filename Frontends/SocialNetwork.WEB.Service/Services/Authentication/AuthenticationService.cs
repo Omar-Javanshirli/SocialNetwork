@@ -16,9 +16,9 @@ using System.Security.Claims;
 using System.Text;
 using System.Text.Json;
 
-namespace SocialNetwork.Web.Service.Services
+namespace SocialNetwork.WEB.Service.Services.Authentication
 {
-    public class AuthenticationService : SocialNetwork.Web.Core.Services.IAuthenticationService
+    public class AuthenticationService : Core.Services.Authentication.IAuthenticationService
     {
         private readonly HttpClient httpClient;
         private readonly IHttpContextAccessor httpContextAccessor;
@@ -39,26 +39,26 @@ namespace SocialNetwork.Web.Service.Services
 
         public async Task<TokenResponse> GetAccessTokenByRefreshTokenAsync()
         {
-            var disco = await this.httpClient.GetDiscoveryDocumentAsync(new DiscoveryDocumentRequest
+            var disco = await httpClient.GetDiscoveryDocumentAsync(new DiscoveryDocumentRequest
             {
-                Address = this.serviceApiSetting.IdentityBaseUri
+                Address = serviceApiSetting.IdentityBaseUri
             });
 
             if (disco is { IsError: true })
                 throw disco.Exception!;
 
-            var refreshToken = await this.httpContextAccessor.HttpContext!.GetTokenAsync
+            var refreshToken = await httpContextAccessor.HttpContext!.GetTokenAsync
                 (OpenIdConnectParameterNames.RefreshToken);
 
             RefreshTokenRequest refreshTokenRequest = new()
             {
-                ClientId = this.clientSetting.WebClientForUser.ClientId,
-                ClientSecret = this.clientSetting.WebClientForUser.ClientSecret,
+                ClientId = clientSetting.WebClientForUser.ClientId,
+                ClientSecret = clientSetting.WebClientForUser.ClientSecret,
                 RefreshToken = refreshToken!,
                 Address = disco.TokenEndpoint
             };
 
-            var token = await this.httpClient.RequestRefreshTokenAsync(refreshTokenRequest);
+            var token = await httpClient.RequestRefreshTokenAsync(refreshTokenRequest);
 
             if (token is { IsError: true })
                 return null;
@@ -71,11 +71,11 @@ namespace SocialNetwork.Web.Service.Services
                 Value=DateTime.Now.AddSeconds(token.ExpiresIn).ToString("o",CultureInfo.InvariantCulture)}
             };
 
-            var authenticationResult = await this.httpContextAccessor.HttpContext!.AuthenticateAsync();
+            var authenticationResult = await httpContextAccessor.HttpContext!.AuthenticateAsync();
             var properties = authenticationResult.Properties;
             properties!.StoreTokens(authenticationToken);
 
-            await this.httpContextAccessor.HttpContext!.SignInAsync
+            await httpContextAccessor.HttpContext!.SignInAsync
                 (CookieAuthenticationDefaults.AuthenticationScheme, authenticationResult.Principal!, properties);
 
             return token;
@@ -83,26 +83,26 @@ namespace SocialNetwork.Web.Service.Services
 
         public async Task GetRefreshTokenAsync()
         {
-            var disco = await this.httpClient.GetDiscoveryDocumentAsync(new DiscoveryDocumentRequest
+            var disco = await httpClient.GetDiscoveryDocumentAsync(new DiscoveryDocumentRequest
             {
-                Address = this.serviceApiSetting.IdentityBaseUri,
+                Address = serviceApiSetting.IdentityBaseUri,
             });
 
             if (disco is { IsError: true })
                 throw disco.Exception!;
 
-            var refreshToken = await this.httpContextAccessor.HttpContext!.GetTokenAsync
+            var refreshToken = await httpContextAccessor.HttpContext!.GetTokenAsync
             (OpenIdConnectParameterNames.RefreshToken);
 
             RefreshTokenRequest refreshTokenRequest = new RefreshTokenRequest()
             {
-                ClientId = this.clientSetting.WebClientForUser.ClientId,
-                ClientSecret = this.clientSetting.WebClientForUser.ClientSecret,
+                ClientId = clientSetting.WebClientForUser.ClientId,
+                ClientSecret = clientSetting.WebClientForUser.ClientSecret,
                 Address = disco.RevocationEndpoint,
                 RefreshToken = refreshToken!,
             };
 
-            var token = await this.httpClient.RequestRefreshTokenAsync(refreshTokenRequest);
+            var token = await httpClient.RequestRefreshTokenAsync(refreshTokenRequest);
 
             if (token is { IsError: true })
                 throw token.Exception!;
@@ -117,25 +117,25 @@ namespace SocialNetwork.Web.Service.Services
                     Value= DateTime.UtcNow.AddSeconds(token.ExpiresIn).ToString("o", CultureInfo.InvariantCulture)}
             };
 
-            var authenticationResult = await this.httpContextAccessor.HttpContext!.AuthenticateAsync();
+            var authenticationResult = await httpContextAccessor.HttpContext!.AuthenticateAsync();
             var properties = authenticationResult.Properties;
             properties!.StoreTokens(tokens);
 
-            await this.httpContextAccessor.HttpContext!.SignInAsync(CookieAuthenticationDefaults.AuthenticationScheme,
+            await httpContextAccessor.HttpContext!.SignInAsync(CookieAuthenticationDefaults.AuthenticationScheme,
                 authenticationResult.Principal!, properties);
         }
 
         public async Task<string> GetTokenByClientAsync()
         {
-            var currentToken = await this.clientAccessTokenCache.GetAsync
+            var currentToken = await clientAccessTokenCache.GetAsync
                 ("WebClientToken", new ClientAccessTokenParameters());
 
             if (currentToken != null)
                 return currentToken.AccessToken!;
 
-            var disco = await this.httpClient.GetDiscoveryDocumentAsync(new DiscoveryDocumentRequest
+            var disco = await httpClient.GetDiscoveryDocumentAsync(new DiscoveryDocumentRequest
             {
-                Address = this.serviceApiSetting.IdentityBaseUri,
+                Address = serviceApiSetting.IdentityBaseUri,
             });
 
             if (disco.IsError)
@@ -143,18 +143,18 @@ namespace SocialNetwork.Web.Service.Services
 
             ClientCredentialsTokenRequest clientCredentialTokenRequest = new()
             {
-                ClientId = this.clientSetting.WebClient.ClientId,
-                ClientSecret = this.clientSetting.WebClient.ClientSecret,
+                ClientId = clientSetting.WebClient.ClientId,
+                ClientSecret = clientSetting.WebClient.ClientSecret,
                 Address = disco.TokenEndpoint
             };
 
-            var newToken = await this.httpClient.RequestClientCredentialsTokenAsync
+            var newToken = await httpClient.RequestClientCredentialsTokenAsync
                 (clientCredentialTokenRequest);
 
             if (newToken is { IsError: true })
                 throw newToken.Exception!;
 
-            await this.clientAccessTokenCache.SetAsync
+            await clientAccessTokenCache.SetAsync
                 ("WebClientToken", newToken.AccessToken!, newToken.ExpiresIn, default!);
 
             return newToken.AccessToken!;
@@ -169,35 +169,35 @@ namespace SocialNetwork.Web.Service.Services
 
         public async Task RevokeRefreshTokenAsync()
         {
-            var disco = await this.httpClient.GetDiscoveryDocumentAsync(new DiscoveryDocumentRequest
+            var disco = await httpClient.GetDiscoveryDocumentAsync(new DiscoveryDocumentRequest
             {
-                Address = this.serviceApiSetting.IdentityBaseUri,
+                Address = serviceApiSetting.IdentityBaseUri,
                 Policy = new DiscoveryPolicy { RequireHttps = false }
             });
 
             if (disco.IsError)
                 throw disco.Exception!;
 
-            var refreshToken = await this.httpContextAccessor.HttpContext!.GetTokenAsync
+            var refreshToken = await httpContextAccessor.HttpContext!.GetTokenAsync
                 (OpenIdConnectParameterNames.RefreshToken);
 
             TokenRevocationRequest tokenRevocationRequest = new()
             {
-                ClientId = this.clientSetting.WebClientForUser.ClientId,
-                ClientSecret = this.clientSetting.WebClientForUser.ClientSecret,
+                ClientId = clientSetting.WebClientForUser.ClientId,
+                ClientSecret = clientSetting.WebClientForUser.ClientSecret,
                 Address = disco.RevocationEndpoint,
                 Token = refreshToken!,
                 TokenTypeHint = "refresh_token"
             };
 
-            await this.httpClient.RevokeTokenAsync(tokenRevocationRequest);
+            await httpClient.RevokeTokenAsync(tokenRevocationRequest);
         }
 
         public async Task<Response<bool>> SigninAsync(SignInInput signInInput)
         {
-            var disco = await this.httpClient.GetDiscoveryDocumentAsync(new DiscoveryDocumentRequest
+            var disco = await httpClient.GetDiscoveryDocumentAsync(new DiscoveryDocumentRequest
             {
-                Address = this.serviceApiSetting.IdentityBaseUri
+                Address = serviceApiSetting.IdentityBaseUri
             });
 
             if (disco is { IsError: true })
@@ -205,14 +205,14 @@ namespace SocialNetwork.Web.Service.Services
 
             PasswordTokenRequest passwordTokenRequest = new()
             {
-                ClientId = this.clientSetting.WebClientForUser.ClientId,
-                ClientSecret = this.clientSetting.WebClientForUser.ClientSecret,
+                ClientId = clientSetting.WebClientForUser.ClientId,
+                ClientSecret = clientSetting.WebClientForUser.ClientSecret,
                 UserName = signInInput.Email,
                 Password = signInInput.Password,
                 Address = disco.TokenEndpoint
             };
 
-            var token = await this.httpClient.RequestPasswordTokenAsync(passwordTokenRequest);
+            var token = await httpClient.RequestPasswordTokenAsync(passwordTokenRequest);
 
             if (token is { IsError: true })
             {
@@ -229,7 +229,7 @@ namespace SocialNetwork.Web.Service.Services
                 Address = disco.UserInfoEndpoint
             };
 
-            var userInfo = await this.httpClient.GetUserInfoAsync(userInfoRequest);
+            var userInfo = await httpClient.GetUserInfoAsync(userInfoRequest);
 
             if (userInfo is { IsError: true })
                 throw userInfo.Exception!;
@@ -251,17 +251,17 @@ namespace SocialNetwork.Web.Service.Services
 
             authenticationProperties.IsPersistent = signInInput.IsRemember;
 
-            await this.httpContextAccessor.HttpContext!.SignInAsync
+            await httpContextAccessor.HttpContext!.SignInAsync
                 (CookieAuthenticationDefaults.AuthenticationScheme, claimsPrincipal, authenticationProperties);
 
             return Response<bool>.Success(200);
         }
 
-        public async Task<List<string>> SignUpAsync(Core.Models.Input.SignUpInput signUpInput)
+        public async Task<List<string>> SignUpAsync(SignUpInput signUpInput)
         {
-            var disco = await this.httpClient.GetDiscoveryDocumentAsync(new DiscoveryDocumentRequest
+            var disco = await httpClient.GetDiscoveryDocumentAsync(new DiscoveryDocumentRequest
             {
-                Address = this.serviceApiSetting.IdentityBaseUri
+                Address = serviceApiSetting.IdentityBaseUri
             });
 
             if (disco is { IsError: true })
@@ -269,12 +269,12 @@ namespace SocialNetwork.Web.Service.Services
 
             var clientCredentialTokenRequest = new ClientCredentialsTokenRequest()
             {
-                ClientId = this.clientSetting.WebClientForUser.ClientId,
-                ClientSecret = this.clientSetting.WebClientForUser.ClientSecret,
+                ClientId = clientSetting.WebClientForUser.ClientId,
+                ClientSecret = clientSetting.WebClientForUser.ClientSecret,
                 Address = disco.TokenEndpoint
             };
 
-            var token = await this.httpClient.RequestClientCredentialsTokenAsync(clientCredentialTokenRequest);
+            var token = await httpClient.RequestClientCredentialsTokenAsync(clientCredentialTokenRequest);
 
             if (token is { IsError: true })
                 throw token.Exception!;
@@ -282,7 +282,7 @@ namespace SocialNetwork.Web.Service.Services
             var stringContent = new StringContent(JsonConvert.SerializeObject
                 (signUpInput), Encoding.UTF8, "application/json");
 
-            this.httpClient.SetBearerToken(token.AccessToken!);
+            httpClient.SetBearerToken(token.AccessToken!);
             var response = await httpClient.PostAsync("https://localhost:5001/api/auth/signup", stringContent);
 
             if (response is { IsSuccessStatusCode: false })

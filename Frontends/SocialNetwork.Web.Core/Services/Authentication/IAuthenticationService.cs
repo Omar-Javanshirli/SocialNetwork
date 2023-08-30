@@ -2,16 +2,16 @@
 using SocialNetwork.Shared.Dtos;
 using SocialNetwork.Web.Core.Models.Input;
 
-namespace SocialNetwork.Web.Core.Services
+namespace SocialNetwork.WEB.Core.Services.Authentication
 {
     public interface IAuthenticationService
     {
         Task<TokenResponse> GetAccessTokenByRefreshTokenAsync();
         Task RevokeRefreshTokenAsync();
-        Task<String> GetTokenByClientAsync();
+        Task<string> GetTokenByClientAsync();
         Task GetRefreshTokenAsync();
         Task<Response<bool>> SigninAsync(SignInInput signInInput);
-        public Task<List<string>> SignUpAsync(Core.Models.Input.SignUpInput signUpInput);
-        Task<Response<bool>> LogoutAsync(); 
+        public Task<List<string>> SignUpAsync(SignUpInput signUpInput);
+        Task<Response<bool>> LogoutAsync();
     }
 }

@@ -10,6 +10,8 @@ namespace SocialNetwork.IdentityServer
         public static IEnumerable<ApiResource> ApiResources =>
             new ApiResource[]
             {
+                new ApiResource(Permission.GraphPermission.resourseGraph){Scopes={Permission.GraphPermission.graphFullpermission }},
+                new ApiResource(Permission.GatewayPermission.ResourceGateway){Scopes={Permission.GatewayPermission.GatewayFullpermission }},
                 new ApiResource(IdentityServerConstants.LocalApi.ScopeName)
             };
 
@@ -24,6 +26,8 @@ namespace SocialNetwork.IdentityServer
         public static IEnumerable<ApiScope> ApiScopes =>
             new ApiScope[]
             {
+                new ApiScope(Permission.GraphPermission.graphFullpermission,"Full Access to Graph API"),
+                new ApiScope(Permission.GatewayPermission.GatewayFullpermission,"Full Access to Gateway API"),
                 new ApiScope(IdentityServerConstants.LocalApi.ScopeName)
             };
 
@@ -32,9 +36,9 @@ namespace SocialNetwork.IdentityServer
             {
                 new Client
                 {
-                    ClientName="Social_Network_Web",
-                    ClientId="Web_Client_ForUser",
-                    ClientSecrets={new Secret("secret".Sha256())},
+                    ClientName=Permission.ClientPermission.SocialNetworkWeb.ClientName,
+                    ClientId=Permission.ClientPermission.SocialNetworkWeb.ClientId,
+                    ClientSecrets={new Secret(Permission.ClientPermission.SocialNetworkWeb.ClientSecret.Sha256())},
                     AllowedGrantTypes=GrantTypes.ResourceOwnerPasswordAndClientCredentials,
                     AllowOfflineAccess=true,
                     AllowedScopes=
@@ -43,7 +47,9 @@ namespace SocialNetwork.IdentityServer
                         IdentityServerConstants.StandardScopes.Email,
                         IdentityServerConstants.StandardScopes.OpenId,
                         IdentityServerConstants.StandardScopes.Profile,
-                        IdentityServerConstants.StandardScopes.OfflineAccess
+                        IdentityServerConstants.StandardScopes.OfflineAccess,
+                        Permission.GraphPermission.graphFullpermission,
+                        Permission.GatewayPermission.GatewayFullpermission
                     },
                     AccessTokenLifetime=1*60*60,
                     RefreshTokenExpiration=TokenExpiration.Absolute,

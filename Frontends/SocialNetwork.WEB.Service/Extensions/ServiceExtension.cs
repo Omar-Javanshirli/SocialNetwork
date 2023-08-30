@@ -4,6 +4,8 @@ using SocialNetwork.Web.Core.Models.Settings;
 using SocialNetwork.Web.Core.Services;
 using SocialNetwork.Web.Service.Handler;
 using SocialNetwork.Web.Service.Services;
+using SocialNetwork.WEB.Core.Services.Authentication;
+using SocialNetwork.WEB.Service.Services.Authentication;
 
 namespace SocialNetwork.Web.Service.Extensions
 {

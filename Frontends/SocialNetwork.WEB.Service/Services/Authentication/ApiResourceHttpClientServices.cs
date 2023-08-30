@@ -4,9 +4,9 @@ using Microsoft.AspNetCore.Http;
 using Microsoft.Extensions.Options;
 using Microsoft.IdentityModel.Protocols.OpenIdConnect;
 using SocialNetwork.Web.Core.Models.Settings;
-using SocialNetwork.Web.Core.Services;
+using SocialNetwork.WEB.Core.Services.Authentication;
 
-namespace SocialNetwork.Web.Service.Services
+namespace SocialNetwork.WEB.Service.Services.Authentication
 {
     public class ApiResourceHttpClientServices : IApiResourceHttpClientService
     {
@@ -19,15 +19,15 @@ namespace SocialNetwork.Web.Service.Services
             IOptions<ClientSetting> clientSetting, IOptions<ServiceApiSetting> serviceApiSetting)
         {
             this.contextAccessor = contextAccessor;
-            this.client = new HttpClient();
+            client = new HttpClient();
             this.clientSetting = clientSetting.Value;
             this.serviceApiSetting = serviceApiSetting.Value;
         }
 
         public async Task<HttpClient> GetHttpClientAsync()
         {
-            var accessToken = await this.contextAccessor.HttpContext!.GetTokenAsync(OpenIdConnectParameterNames.AccessToken);
-            this.client.SetBearerToken(accessToken!);
+            var accessToken = await contextAccessor.HttpContext!.GetTokenAsync(OpenIdConnectParameterNames.AccessToken);
+            client.SetBearerToken(accessToken!);
             return client;
         }
     }

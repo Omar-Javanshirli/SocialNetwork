@@ -8,7 +8,20 @@
   </PropertyGroup>
 
   <ItemGroup>
-    <ProjectReference Include="..\B .SocialNetwork.Servicec.Graph.Core\B .SocialNetwork.Servicec.Graph.Core.csproj" />
+    <Folder Include="CQRS\User\Commands\Response\" />
+    <Folder Include="CQRS\User\Commands\Request\" />
+    <Folder Include="CQRS\User\Handlers\CommandHandlers\" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <PackageReference Include="AutoMapper.Extensions.Microsoft.DependencyInjection" Version="12.0.1" />
+    <PackageReference Include="MediatR.Extensions.Microsoft.DependencyInjection" Version="9.0.0" />
+    <PackageReference Include="Microsoft.AspNetCore.Authentication.JwtBearer" Version="7.0.10" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\..\..\Shared\SocialNetwork.Shared\SocialNetwork.Shared.csproj" />
+    <ProjectReference Include="..\C. SocialNetwork.Services.Graph.Repository\C. SocialNetwork.Services.Graph.Repository.csproj" />
   </ItemGroup>
 
 </Project>

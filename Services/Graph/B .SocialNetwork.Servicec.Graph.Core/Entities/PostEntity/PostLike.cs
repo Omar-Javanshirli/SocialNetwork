@@ -1,10 +1,18 @@
 ﻿namespace B._SocialNetwork.Services.Graph.Core.Entities.PostsEntity
 {
-    public class PostLike : BaseEntity
+    public class PostLike : BaseEntity,IComparable<PostLike>
     {
-        public string UserId { get; set; } = null!;
-        public string PostId { get; set; } = null!;
+        public Guid UserId { get; set; } 
+        public Guid PostId { get; set; }
         public User User { get; set; } = null!;
         public Post Post { get; set; } = null!;
+
+        public int CompareTo(PostLike? other)
+        {
+            if (other == null)
+                return 1;
+
+            return string.Compare(Id.ToString(), other.Id.ToString(), StringComparison.Ordinal);
+        }
     }
 }

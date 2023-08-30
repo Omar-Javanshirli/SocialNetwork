@@ -1,9 +1,13 @@
 ﻿using B._SocialNetwork.Services.Graph.Core.Repositories;
+using B_.SocialNetwork.Servicec.Graph.Core.Repositories;
 
 namespace B._SocialNetwork.Services.Graph.Core.UnitOfWorks
 {
     public interface IUnitOfWork
     {
-        public IGenericRepository<dynamic> genericRepository { get; }
+        IGenericRepository<T> GetGenericRepository<T>() where T : class;
+        public IUserRepository userRepository { get; }
+        public IPostRepository postRepository { get; }
+        public ICommentRepository commentRepository { get; }
     }
 }

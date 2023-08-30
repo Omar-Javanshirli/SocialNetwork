@@ -2,7 +2,7 @@
 using Microsoft.AspNetCore.Http;
 using Microsoft.IdentityModel.Protocols.OpenIdConnect;
 using SocialNetwork.Shared.Exceptions;
-using IAuthenticationService = SocialNetwork.Web.Core.Services.IAuthenticationService;
+using IAuthenticationService = SocialNetwork.WEB.Core.Services.Authentication.IAuthenticationService;
 
 namespace SocialNetwork.Web.Service.Handler
 {

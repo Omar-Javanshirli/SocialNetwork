@@ -3,7 +3,7 @@
     public class Follower : BaseEntity
     {
         public bool IsRecaiverOrSender { get; set; }
-        public string UserId { get; set; } = null!;
+        public Guid UserId { get; set; } 
         public User User { get; set; } = null!;
     }
 }
