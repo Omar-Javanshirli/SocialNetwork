@@ -7,7 +7,7 @@ using System.Collections.Generic;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace SocialNetworkIdentityServer.Service.Services
+namespace SocialNetworkIdentityServer.Service.Validators
 {
     public class IdentityResourceOwnerPasswordValidator : IResourceOwnerPasswordValidator
     {
@@ -20,7 +20,7 @@ namespace SocialNetworkIdentityServer.Service.Services
 
         public async Task ValidateAsync(ResourceOwnerPasswordValidationContext context)
         {
-            var existUser = await this.userManager.FindByEmailAsync(context.UserName);
+            var existUser = await userManager.FindByEmailAsync(context.UserName);
 
             if (existUser == null)
             {
@@ -30,7 +30,7 @@ namespace SocialNetworkIdentityServer.Service.Services
                 return;
             }
 
-            var passwordCheck = await this.userManager.CheckPasswordAsync(existUser, context.Password);
+            var passwordCheck = await userManager.CheckPasswordAsync(existUser, context.Password);
 
             if (passwordCheck == false)
             {
