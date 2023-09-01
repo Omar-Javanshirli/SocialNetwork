@@ -5,12 +5,8 @@
   </PropertyGroup>
 
   <ItemGroup>
-    <PackageReference Include="AutoMapper.Extensions.Microsoft.DependencyInjection" Version="12.0.1" />
-  </ItemGroup>
-
-  <ItemGroup>
     <ProjectReference Include="..\..\Shared\SocialNetwork.Shared\SocialNetwork.Shared.csproj" />
-    <ProjectReference Include="..\..\SocialNetwork.IdentityServer.Data\SocialNetwork.IdentityServer.Data.csproj" />
+    <ProjectReference Include="..\SocialNetwork.IdentityServer.Data\SocialNetwork.IdentityServer.Data.csproj" />
   </ItemGroup>
 
 </Project>
