@@ -8,7 +8,7 @@ using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
 using SocialNetwork.IdentityServer.Core.Models;
 using SocialNetwork.IdentityServer.Data;
-using SocialNetworkIdentityServer.Service.Services;
+using SocialNetworkIdentityServer.Service.Validators;
 
 namespace SocialNetwork.IdentityServer
 {

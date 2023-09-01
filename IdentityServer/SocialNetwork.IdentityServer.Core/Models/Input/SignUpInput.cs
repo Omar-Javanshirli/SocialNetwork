@@ -1,8 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Text;
-
-namespace SocialNetwork.IdentityServer.Core.Models.Input
+﻿namespace SocialNetwork.IdentityServer.Core.Models.Input
 {
     public class SignUpInput
     {
