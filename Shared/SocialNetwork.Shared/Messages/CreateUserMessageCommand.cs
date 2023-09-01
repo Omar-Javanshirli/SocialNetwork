@@ -1,10 +1,11 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Text;
 
 namespace SocialNetwork.Shared.Messages
 {
-    internal class CreateUserMessageCommand
+    public class CreateUserMessageCommand
     {
+        public Guid UserId { get; set; }
+        public string Username { get; set; }
+        public string Email { get; set; }
     }
 }
