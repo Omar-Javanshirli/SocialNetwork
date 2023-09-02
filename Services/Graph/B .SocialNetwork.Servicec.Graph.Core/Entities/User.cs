@@ -15,9 +15,9 @@ namespace B._SocialNetwork.Services.Graph.Core.Entities
         public string? ProfilePictureUrl { get; set; }
         public string? Bio { get; set; }
         public string? Fullname { get; set; }
-        public bool IsOnline { get; set; }
-        public bool IsPrivate { get; set; }
-        public Gender Gender { get; set; }
+        public bool? IsOnline { get; set; }
+        public bool? IsPrivate { get; set; }
+        public Gender? Gender { get; set; }
         public List<Post>? Posts { get; set; }
         public List<Comment>? Comments { get; set; }
         public BST<PostLike>? PostsLike { get; set; }

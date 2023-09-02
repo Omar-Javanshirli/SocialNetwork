@@ -32,13 +32,13 @@ namespace SocialNetworkIdentityServer.Service.Services
             if (result is { Succeeded: false })
                 return Response<ApplicationUser>.Fail("Password or Email is wrong", 400);
 
-            await _publishEndpoint.Publish<CreateUserMessageCommand>
-               (new CreateUserMessageCommand
-               {
-                   UserId = Guid.Parse(user.Id),
-                   Email = user.Email,
-                   Username=user.UserName,
-               });
+            await _publishEndpoint.Publish<CreateUserMessageEvent>
+                (new CreateUserMessageEvent
+                {
+                    UserId = Guid.Parse(user.Id),
+                    Email = user.Email,
+                    Username = user.UserName,
+                });
 
             return Response<ApplicationUser>.Success(user, 204);
         }

@@ -1,4 +1,5 @@
-﻿using B._SocialNetwork.Services.Graph.Core.Entities.FriendsEntity;
+﻿using B._SocialNetwork.Services.Graph.Core.Entities;
+using B._SocialNetwork.Services.Graph.Core.Entities.FriendsEntity;
 using B._SocialNetwork.Services.Graph.Core.Entities.PostsEntity;
 using B_.SocialNetwork.Servicec.Graph.Core.Entities.PostEntity;
 using B_.SocialNetwork.Servicec.Graph.Core.Repositories;
@@ -11,6 +12,16 @@ namespace C._SocialNetwork.Services.Graph.Repository.Repositories
         internal UserRepository(string connectionString)
             : base(connectionString)
         {
+        }
+
+        public async Task<User> AddUserAsync(User user)
+        {
+            string sqlQuery = $"INSERT INTO Users(Id,Username,Email)" +
+                             $"VALUES(@Id,@Username,@Email)";
+
+            using var conn = OpenConnection();
+            await conn.ExecuteAsync(sqlQuery, user);
+            return user;
         }
 
         public Task<List<Follower>> GetAllUserFollowersAsync(string userId)

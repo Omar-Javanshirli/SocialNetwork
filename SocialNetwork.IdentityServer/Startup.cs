@@ -1,4 +1,5 @@
 ﻿using IdentityServer4;
+using MassTransit;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.AspNetCore.Identity;
@@ -7,7 +8,9 @@ using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
 using SocialNetwork.IdentityServer.Core.Models;
+using SocialNetwork.IdentityServer.Core.Services;
 using SocialNetwork.IdentityServer.Data;
+using SocialNetworkIdentityServer.Service.Services;
 using SocialNetworkIdentityServer.Service.Validators;
 
 namespace SocialNetwork.IdentityServer
@@ -25,6 +28,20 @@ namespace SocialNetwork.IdentityServer
 
         public void ConfigureServices(IServiceCollection services)
         {
+
+            services.AddMassTransit(x =>
+            {
+                x.UsingRabbitMq((context, cfg) =>
+                {
+                    cfg.Host(Configuration["RabbitMQUrl"], "/", host =>
+                    {
+                        host.Username("guest");
+                        host.Password("guest");
+                    });
+                });
+            });
+
+            services.AddMassTransitHostedService();
             services.AddControllersWithViews();
 
             services.AddIdentity<ApplicationUser, IdentityRole>()
@@ -56,6 +73,9 @@ namespace SocialNetwork.IdentityServer
             builder.AddInMemoryClients(Config.Clients);
             builder.AddAspNetIdentity<ApplicationUser>();
             builder.AddResourceOwnerValidator<IdentityResourceOwnerPasswordValidator>();
+
+
+            services.AddScoped<IAuthenticationService, AuthenticationService>();
 
             // not recommended for production - you need to store your key material somewhere secure
             builder.AddDeveloperSigningCredential();

@@ -10,11 +10,33 @@ using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using SocialNetwork.Shared.Services;
 using System.IdentityModel.Tokens.Jwt;
+using MassTransit;
+using SocialNetwork.Shared.Messages;
+using D._SocialNetwork.Services.Graph.Services.Consumers;
 
 public static class DependencyInjection
 {
     public static IServiceCollection AddApplicationServices(this IServiceCollection services, IConfiguration configuration)
     {
+        services.AddMassTransit(x =>
+        {
+            x.AddConsumer<CreateUserMessageEventConsumer>();
+
+            x.UsingRabbitMq((context, cfg) =>
+            {
+                cfg.Host(configuration["RabbitMQUrl"], "/", host =>
+                {
+                    host.Username("guest");
+                    host.Password("guest");
+                });
+
+                cfg.ReceiveEndpoint("create-graph-service", e =>
+                {
+                    e.ConfigureConsumer<CreateUserMessageEventConsumer>(context);
+                });
+            });
+        });
+
         services.AddHttpContextAccessor();
 
         var requireAuthorizePolicy = new AuthorizationPolicyBuilder().RequireAuthenticatedUser().Build();
