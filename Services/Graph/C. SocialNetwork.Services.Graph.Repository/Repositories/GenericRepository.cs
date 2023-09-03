@@ -1,5 +1,6 @@
 ﻿using B._SocialNetwork.Services.Graph.Core.Repositories;
 using Dapper;
+using Microsoft.Data.SqlClient;
 using System.Data;
 using System.Data.Common;
 using System.Linq.Expressions;
@@ -8,24 +9,31 @@ namespace C._SocialNetwork.Services.Graph.Repository.Repositories
 {
     public class GenericRepository<T> : BaseSqlRepository, IGenericRepository<T> where T : class
     {
-
         public GenericRepository(string connectionString)
             : base(connectionString)
         {
 
         }
 
+        private string GetTableName(string tableName)
+        {
+            string[] splits = tableName.Split('_');
+            tableName = splits[0];
+            return tableName;
+        }
+
         public async Task AddAsync(T entity)
         {
+            var tableName = GetTableName(typeof(T).Name);
             var properties = typeof(T).GetProperties();
             var columnNames = string.Join(",", properties.Select(property => property.Name));
             var parameterNames = string.Join(",", properties.Select(property => "@" + property.Name));
 
-            var sqlQuery = $"INSERT INTO {typeof(T).Name} ({columnNames}) VALUES ({parameterNames})";
+
+            var sqlQuery = $"INSERT INTO {tableName} ({columnNames}) VALUES ({parameterNames})";
             using var con = OpenConnection();
             var result = await con.ExecuteAsync(sqlQuery, entity);
         }
-
         public async Task AddRangeAsync(IEnumerable<T> entities)
         {
             string tableName = typeof(T).Name;
@@ -85,13 +93,13 @@ namespace C._SocialNetwork.Services.Graph.Repository.Repositories
             var properties = typeof(T).GetProperties();
             var columnNames = string.Join(",", properties.Select(property => property.Name));
             string query = $"UPDATE {typeof(T).Name} SET Name = {columnNames} WHERE Id = @Id";
-            using var con= OpenConnection();
+            using var con = OpenConnection();
             con.Execute(query, entity);
         }
 
         public IQueryable<T> Where(Expression<Func<T, bool>> expression)
         {
-            using var con = OpenConnection();   
+            using var con = OpenConnection();
             return con.Query<T>($"SELECT * FROM {typeof(T).Name}").AsQueryable().Where(expression);
         }
     }

@@ -1,7 +1,6 @@
 ﻿using B._SocialNetwork.Services.Graph.Core.Entities;
 using B._SocialNetwork.Services.Graph.Core.UnitOfWorks;
-using B_.SocialNetwork.Servicec.Graph.Core.Dto;
-using B_.SocialNetwork.Servicec.Graph.Core.Repositories;
+using B_.SocialNetwork.Servicec.Graph.Core.Dtos;
 using MassTransit;
 using SocialNetwork.Shared.Messages;
 
@@ -20,15 +19,15 @@ namespace D._SocialNetwork.Services.Graph.Services.Consumers
 
         public async Task Consume(ConsumeContext<CreateUserMessageEvent> context)
         {
-            User user = new()
+            Users_Create user = new()
             {
                 Username = context.Message.Username,
                 Id = context.Message.UserId,
                 Email = context.Message.Email,
             };
 
-            //await _unitOfWork.GetGenericRepository<CreateUserDto>().AddAsync(user);
-            await _unitOfWork.userRepository.AddUserAsync(user);
+            await _unitOfWork.GetGenericRepository<Users_Create>().AddAsync(user);
+            //await _unitOfWork.userRepository.AddUserAsync(user);
         }
     }
 }
