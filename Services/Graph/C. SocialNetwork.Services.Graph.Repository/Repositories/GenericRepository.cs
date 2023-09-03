@@ -19,6 +19,7 @@ namespace C._SocialNetwork.Services.Graph.Repository.Repositories
         {
             string[] splits = tableName.Split('_');
             tableName = splits[0];
+            tableName += 's';
             return tableName;
         }
 

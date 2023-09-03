@@ -19,14 +19,14 @@ namespace D._SocialNetwork.Services.Graph.Services.Consumers
 
         public async Task Consume(ConsumeContext<CreateUserMessageEvent> context)
         {
-            Users_Create user = new()
+            User_CreateDto user = new()
             {
                 Username = context.Message.Username,
                 Id = context.Message.UserId,
                 Email = context.Message.Email,
             };
 
-            await _unitOfWork.GetGenericRepository<Users_Create>().AddAsync(user);
+            await _unitOfWork.GetGenericRepository<User_CreateDto>().AddAsync(user);
         }
     }
 }
