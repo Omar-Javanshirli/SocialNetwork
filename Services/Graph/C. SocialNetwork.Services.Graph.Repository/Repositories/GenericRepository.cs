@@ -34,6 +34,7 @@ namespace C._SocialNetwork.Services.Graph.Repository.Repositories
             using var con = OpenConnection();
             var result = await con.ExecuteAsync(sqlQuery, entity);
         }
+
         public async Task AddRangeAsync(IEnumerable<T> entities)
         {
             string tableName = typeof(T).Name;

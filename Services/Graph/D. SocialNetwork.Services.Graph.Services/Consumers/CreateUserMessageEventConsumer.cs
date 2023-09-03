@@ -27,7 +27,6 @@ namespace D._SocialNetwork.Services.Graph.Services.Consumers
             };
 
             await _unitOfWork.GetGenericRepository<Users_Create>().AddAsync(user);
-            //await _unitOfWork.userRepository.AddUserAsync(user);
         }
     }
 }

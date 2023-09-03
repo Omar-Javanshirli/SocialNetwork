@@ -14,16 +14,6 @@ namespace C._SocialNetwork.Services.Graph.Repository.Repositories
         {
         }
 
-        public async Task<User> AddUserAsync(User user)
-        {
-            string sqlQuery = $"INSERT INTO Users(Id,Username,Email)" +
-                             $"VALUES(@Id,@Username,@Email)";
-
-            using var conn = OpenConnection();
-            await conn.ExecuteAsync(sqlQuery, user);
-            return user;
-        }
-
         public Task<List<Follower>> GetAllUserFollowersAsync(string userId)
         {
             throw new NotImplementedException();
