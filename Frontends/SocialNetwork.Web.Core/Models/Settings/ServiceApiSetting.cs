@@ -1,4 +1,4 @@
-﻿namespace SocialNetwork.Web.Core.Models.Settings
+﻿namespace SocialNetwork.WEB.Core.Models.Settings
 {
     public class ServiceApiSetting
     {

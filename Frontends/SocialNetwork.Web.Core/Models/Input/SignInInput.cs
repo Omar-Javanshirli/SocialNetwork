@@ -1,6 +1,6 @@
 ﻿using System.ComponentModel.DataAnnotations;
 
-namespace SocialNetwork.Web.Core.Models.Input
+namespace SocialNetwork.WEB.Core.Models.Input
 {
     public class SignInInput
     {

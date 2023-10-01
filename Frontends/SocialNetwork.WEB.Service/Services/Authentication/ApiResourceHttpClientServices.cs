@@ -3,7 +3,7 @@ using Microsoft.AspNetCore.Authentication;
 using Microsoft.AspNetCore.Http;
 using Microsoft.Extensions.Options;
 using Microsoft.IdentityModel.Protocols.OpenIdConnect;
-using SocialNetwork.Web.Core.Models.Settings;
+using SocialNetwork.WEB.Core.Models.Settings;
 using SocialNetwork.WEB.Core.Services.Authentication;
 
 namespace SocialNetwork.WEB.Service.Services.Authentication

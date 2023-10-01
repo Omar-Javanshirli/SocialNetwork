@@ -1,6 +1,7 @@
 using Microsoft.AspNetCore.Authentication.Cookies;
-using SocialNetwork.Web.Core.Models.Settings;
+using SocialNetwork.Shared.Services;
 using SocialNetwork.Web.Service.Extensions;
+using SocialNetwork.WEB.Core.Models.Settings;
 
 var builder = WebApplication.CreateBuilder(args);
 
@@ -12,6 +13,8 @@ builder.Services.Configure<ServiceApiSetting>(builder.Configuration.GetSection("
 
 builder.Services.AddHttpContextAccessor();
 builder.Services.AddAccessTokenManagement();
+
+builder.Services.AddScoped<ISharedIdentityService, SharedIdentityService>();
 
 builder.Services.AddHttpClientServices(builder.Configuration);
 

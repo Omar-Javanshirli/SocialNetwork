@@ -1,5 +1,5 @@
 ﻿using FluentValidation;
-using SocialNetwork.Web.Core.Models.Input;
+using SocialNetwork.WEB.Core.Models.Input;
 
 namespace SocialNetwork.Web.Service.Validators.Input
 {
