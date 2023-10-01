@@ -2,6 +2,9 @@
 using B._SocialNetwork.Services.Graph.Core.UnitOfWorks;
 using B_.SocialNetwork.Servicec.Graph.Core.Repositories;
 using C._SocialNetwork.Services.Graph.Repository.Repositories;
+using C._SocialNetwork.Services.Graph.Repository.Repositories.Comment;
+using C._SocialNetwork.Services.Graph.Repository.Repositories.Post;
+using C._SocialNetwork.Services.Graph.Repository.Repositories.User;
 using Microsoft.Extensions.Configuration;
 
 namespace C._SocialNetwork.Services.Graph.Repository

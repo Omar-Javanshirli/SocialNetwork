@@ -3,7 +3,7 @@ using B_.SocialNetwork.Servicec.Graph.Core.Repositories;
 using Dapper;
 using SocialNetwork.Shared.Data_Structures;
 
-namespace C._SocialNetwork.Services.Graph.Repository.Repositories
+namespace C._SocialNetwork.Services.Graph.Repository.Repositories.Post
 {
     public class PostRepository : BaseSqlRepository, IPostRepository
     {
@@ -17,10 +17,10 @@ namespace C._SocialNetwork.Services.Graph.Repository.Repositories
             using var con = OpenConnection();
             var result = await con.QueryAsync<PostLike>(sqlQuery, new { postId });
 
-            var bst=new BST<PostLike>();
-            
+            var bst = new BST<PostLike>();
+
             foreach (var postLike in result)
-                bst.Tree=bst.Add(bst.Tree, postLike);
+                bst.Tree = bst.Add(bst.Tree, postLike);
 
             return bst;
         }

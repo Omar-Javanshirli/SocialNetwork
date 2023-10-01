@@ -5,7 +5,7 @@ using B_.SocialNetwork.Servicec.Graph.Core.Entities.PostEntity;
 using B_.SocialNetwork.Servicec.Graph.Core.Repositories;
 using Dapper;
 
-namespace C._SocialNetwork.Services.Graph.Repository.Repositories
+namespace C._SocialNetwork.Services.Graph.Repository.Repositories.User
 {
     public class UserRepository : BaseSqlRepository, IUserRepository
     {
