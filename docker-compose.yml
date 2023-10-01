@@ -1,0 +1,8 @@
+version: '3.4'
+
+services:
+  a.socialnetwork.services.graph:
+    image: ${DOCKER_REGISTRY-}asocialnetworkservicesgraph
+    build:
+      context: .
+      dockerfile: C:\Users\User\source\repos\SocialNetwork
