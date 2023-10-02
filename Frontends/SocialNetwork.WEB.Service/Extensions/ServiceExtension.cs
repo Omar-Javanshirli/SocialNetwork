@@ -1,5 +1,6 @@
 ﻿using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
+using SocialNetwork.Shared.Services;
 using SocialNetwork.Web.Core.Services;
 using SocialNetwork.Web.Service.Handler;
 using SocialNetwork.Web.Service.Services;
