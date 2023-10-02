@@ -81,8 +81,7 @@ EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "SocialNetwork.Gateway", "Gateway\SocialNetwork.Gateway\SocialNetwork.Gateway.csproj", "{DB3FB7F6-17C5-4C71-BC86-4EAB73C8D009}"
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "SocialNetwork.IdentityServer.Data", "IdentityServer\SocialNetwork.IdentityServer.Data\SocialNetwork.IdentityServer.Data.csproj", "{7BC12EA6-53D6-4E7B-918F-95538753679B}"
-EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "B. SocialNetwork.Services.Graph.Core", "Services\Graph\B. SocialNetwork.Services.Graph.Core\B. SocialNetwork.Services.Graph.Core.csproj", "{F2FAA155-FFB6-4EE8-BA4F-9F7805967D89}"
+
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution

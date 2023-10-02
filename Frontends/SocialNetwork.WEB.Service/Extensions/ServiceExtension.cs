@@ -1,6 +1,5 @@
 ﻿using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
-using SocialNetwork.Shared.Services;
 using SocialNetwork.Web.Core.Services;
 using SocialNetwork.Web.Service.Handler;
 using SocialNetwork.Web.Service.Services;
@@ -14,7 +13,7 @@ namespace SocialNetwork.Web.Service.Extensions
     {
         public static void AddHttpClientServices(this IServiceCollection services, IConfiguration Configuration)
         {
-            var serviceApiSettings = Configuration.GetSection("ServiceApiSettings").Get<ServiceApiSetting>();
+            var serviceApiSettings = Configuration.GetSection("ServiceApiSetting").Get<ServiceApiSetting>();
 
             services.AddHttpClient<IAuthenticationService, AuthenticationService>();
             services.AddScoped<IApiResourceHttpClientService,ApiResourceHttpClientServices>();

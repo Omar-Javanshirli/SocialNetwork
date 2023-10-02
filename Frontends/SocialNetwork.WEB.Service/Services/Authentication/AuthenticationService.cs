@@ -10,13 +10,14 @@ using SocialNetwork.Shared.Dtos;
 using SocialNetwork.WEB.Core.Models.Input;
 using SocialNetwork.WEB.Core.Models.Settings;
 using System.Globalization;
+using System.Net.Http.Json;
 using System.Security.Claims;
 using System.Text;
 using System.Text.Json;
 
 namespace SocialNetwork.WEB.Service.Services.Authentication
 {
-    public class AuthenticationService : Core.Services.Authentication.IAuthenticationService
+    public class AuthenticationService : SocialNetwork.WEB.Core.Services.Authentication.IAuthenticationService
     {
         private readonly HttpClient httpClient;
         private readonly IHttpContextAccessor httpContextAccessor;
@@ -283,11 +284,11 @@ namespace SocialNetwork.WEB.Service.Services.Authentication
             httpClient.SetBearerToken(token.AccessToken!);
             var response = await httpClient.PostAsync("https://localhost:5001/api/auth/signup", stringContent);
 
+
             if (response is { IsSuccessStatusCode: false })
             {
                 var errors = JsonConvert.DeserializeObject<List<string>>
                     (await response.Content.ReadAsStringAsync());
-
                 return errors!;
             }
             return null;
