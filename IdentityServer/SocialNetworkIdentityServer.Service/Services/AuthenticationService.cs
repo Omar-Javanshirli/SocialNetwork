@@ -26,6 +26,8 @@ namespace SocialNetworkIdentityServer.Service.Services
             {
                 UserName = input.UserName,
                 Email = input.Email,
+                Fullname = input.Fullname,
+                PhoneNumber = input.Phone,
                 Gender = input.Gender
             };
             
