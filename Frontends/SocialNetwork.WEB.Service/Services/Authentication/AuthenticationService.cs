@@ -2,15 +2,13 @@
 using IdentityModel.Client;
 using Microsoft.AspNetCore.Authentication;
 using Microsoft.AspNetCore.Authentication.Cookies;
-using Microsoft.AspNetCore.Components.Forms;
 using Microsoft.AspNetCore.Http;
-using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.Options;
 using Microsoft.IdentityModel.Protocols.OpenIdConnect;
 using Newtonsoft.Json;
 using SocialNetwork.Shared.Dtos;
-using SocialNetwork.Web.Core.Models.Input;
-using SocialNetwork.Web.Core.Models.Settings;
+using SocialNetwork.WEB.Core.Models.Input;
+using SocialNetwork.WEB.Core.Models.Settings;
 using System.Globalization;
 using System.Security.Claims;
 using System.Text;

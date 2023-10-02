@@ -1,6 +1,6 @@
 ﻿using AutoMapper;
-using B._SocialNetwork.Services.Graph.Core.Entities.CommentsEntity;
-using B._SocialNetwork.Services.Graph.Core.Entities.PostsEntity;
+using B._SocialNetwork.Services.Graph.Core.Entities.CommentEntity;
+using B._SocialNetwork.Services.Graph.Core.Entities.PostEntity;
 using D._SocialNetwork.Services.Graph.Services.CQRS.Comment.Quries.Response;
 using D._SocialNetwork.Services.Graph.Services.CQRS.Post.Queries.Response;
 using D._SocialNetwork.Services.Graph.Services.CQRS.User.Queries.Response;

@@ -24,9 +24,13 @@ namespace SocialNetworkIdentityServer.Service.Services
         {
             ApplicationUser user = new ApplicationUser()
             {
-                UserName = input.Username,
-                Email = input.Email
+                UserName = input.UserName,
+                Email = input.Email,
+                Fullname = input.Fullname,
+                PhoneNumber = input.Phone,
+                Gender = input.Gender
             };
+            
             var result = await _userManager.CreateAsync(user, input.Password);
 
             if (result is { Succeeded: false })

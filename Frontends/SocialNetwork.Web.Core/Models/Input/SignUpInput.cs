@@ -1,12 +1,7 @@
-﻿using System;
-using System.Collections.Generic;
+﻿using SocialNetwork.WEB.Core.Enums;
 using System.ComponentModel.DataAnnotations;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using System.Xml.Linq;
 
-namespace SocialNetwork.Web.Core.Models.Input
+namespace SocialNetwork.WEB.Core.Models.Input
 {
     public class SignUpInput
     {
@@ -14,17 +9,21 @@ namespace SocialNetwork.Web.Core.Models.Input
         {
         }
 
-        public SignUpInput(string userName, string email, string phone, string password)
+        public SignUpInput(string userName, string email, string phone, string password, string fullname, Gender gender)
         {
             UserName = userName;
             Email = email;
             Phone = phone;
             Password = password;
+            Gender = gender;
+            Fullname = fullname;
         }
 
+        public string Fullname { get; set; }
         public string UserName { get; set; } = null!;
         public string Email { get; set; } = null!;
         public string Phone { get; set; } = null!;
+        public Gender Gender { get; set; }
 
         [DataType(DataType.Password)]
         public string Password { get; set; } = null!;

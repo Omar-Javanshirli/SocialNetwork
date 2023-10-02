@@ -1,5 +1,5 @@
-﻿using B._SocialNetwork.Services.Graph.Core.UnitOfWorks;
-using B_.SocialNetwork.Servicec.Graph.Core.Dtos;
+﻿using B._SocialNetwork.Services.Graph.Core.Dtos.Users;
+using B._SocialNetwork.Services.Graph.Core.UnitOfWorks;
 using MassTransit;
 using SocialNetwork.Shared.Messages;
 

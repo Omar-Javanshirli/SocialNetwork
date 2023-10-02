@@ -1,9 +1,10 @@
 ﻿using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
-using SocialNetwork.Web.Core.Models.Settings;
+using SocialNetwork.Shared.Services;
 using SocialNetwork.Web.Core.Services;
 using SocialNetwork.Web.Service.Handler;
 using SocialNetwork.Web.Service.Services;
+using SocialNetwork.WEB.Core.Models.Settings;
 using SocialNetwork.WEB.Core.Services.Authentication;
 using SocialNetwork.WEB.Service.Services.Authentication;
 
@@ -18,7 +19,7 @@ namespace SocialNetwork.Web.Service.Extensions
             services.AddHttpClient<IAuthenticationService, AuthenticationService>();
             services.AddScoped<IApiResourceHttpClientService,ApiResourceHttpClientServices>();
             services.AddScoped<ResourceOwnerPasswordTokenHandler>();
-            
+            services.AddScoped<ISharedIdentityService, SharedIdentityService>();
 
             services.AddHttpClient<IUserServices, UserServices>(opt =>
             {

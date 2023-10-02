@@ -1,6 +1,6 @@
 ﻿using FluentValidation;
 using FluentValidation.Validators;
-using SocialNetwork.Web.Core.Models.Input;
+using SocialNetwork.WEB.Core.Models.Input;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;

@@ -1,6 +1,6 @@
 ﻿using IdentityModel.Client;
 using SocialNetwork.Shared.Dtos;
-using SocialNetwork.Web.Core.Models.Input;
+using SocialNetwork.WEB.Core.Models.Input;
 
 namespace SocialNetwork.WEB.Core.Services.Authentication
 {

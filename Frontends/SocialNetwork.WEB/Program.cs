@@ -1,6 +1,6 @@
 using Microsoft.AspNetCore.Authentication.Cookies;
-using SocialNetwork.Web.Core.Models.Settings;
 using SocialNetwork.Web.Service.Extensions;
+using SocialNetwork.WEB.Core.Models.Settings;
 
 var builder = WebApplication.CreateBuilder(args);
 
