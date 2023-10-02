@@ -1,6 +1,4 @@
-using D._SocialNetwork.Services.Graph.Services.Mapping;
-using MediatR;
-using Microsoft.AspNetCore.Authentication.JwtBearer;
+using MassTransit;
 
 var builder = WebApplication.CreateBuilder(args);
 

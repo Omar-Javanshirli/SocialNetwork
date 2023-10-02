@@ -14,7 +14,7 @@
   </ItemGroup>
 
   <ItemGroup>
-    <ProjectReference Include="..\B .SocialNetwork.Servicec.Graph.Core\B .SocialNetwork.Servicec.Graph.Core.csproj" />
+    <ProjectReference Include="..\B. SocialNetwork.Services.Graph.Core\B. SocialNetwork.Services.Graph.Core.csproj" />
   </ItemGroup>
 
 </Project>

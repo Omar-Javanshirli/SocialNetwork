@@ -18,7 +18,7 @@ namespace SocialNetwork.Web.Service.Extensions
             services.AddHttpClient<IAuthenticationService, AuthenticationService>();
             services.AddScoped<IApiResourceHttpClientService,ApiResourceHttpClientServices>();
             services.AddScoped<ResourceOwnerPasswordTokenHandler>();
-            
+            services.AddScoped<ISharedIdentityService, SharedIdentityService>();
 
             services.AddHttpClient<IUserServices, UserServices>(opt =>
             {

@@ -18,7 +18,8 @@ namespace D._SocialNetwork.Services.Graph.Services.CQRS.User.Handlers.QueryHandl
             _mapper = mapper;
         }
 
-        public async Task<Response<IEnumerable<GetAllUserPostsQueryResponse>>> Handle(GetAllUserPostsQueryRequest request, CancellationToken cancellationToken)
+        public async Task<Response<IEnumerable<GetAllUserPostsQueryResponse>>> Handle
+            (GetAllUserPostsQueryRequest request, CancellationToken cancellationToken)
         {
             var userPots = await _unitOfWork.userRepository.GetAllUserPostsAsync(request.UserId);
             var userResponse = _mapper.Map<IEnumerable<GetAllUserPostsQueryResponse>>(userPots);

@@ -1,4 +1,5 @@
 ﻿using IdentityServer4;
+using MassTransit;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.AspNetCore.Identity;
@@ -27,7 +28,6 @@ namespace SocialNetwork.IdentityServer
 
         public void ConfigureServices(IServiceCollection services)
         {
-            services.AddScoped<IAuthenticationService, AuthenticationService>();
 
             services.AddControllersWithViews();
 
@@ -60,6 +60,9 @@ namespace SocialNetwork.IdentityServer
             builder.AddInMemoryClients(Config.Clients);
             builder.AddAspNetIdentity<ApplicationUser>();
             builder.AddResourceOwnerValidator<IdentityResourceOwnerPasswordValidator>();
+
+
+            services.AddScoped<IAuthenticationService, AuthenticationService>();
 
             // not recommended for production - you need to store your key material somewhere secure
             builder.AddDeveloperSigningCredential();

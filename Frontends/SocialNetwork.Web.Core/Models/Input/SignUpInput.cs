@@ -9,7 +9,7 @@ namespace SocialNetwork.WEB.Core.Models.Input
         {
         }
 
-        public SignUpInput(string userName, string email, string phone, string password,string fullname,Gender gender)
+
         {
             UserName = userName;
             Email = email;

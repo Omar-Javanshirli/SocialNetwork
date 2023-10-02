@@ -1,5 +1,5 @@
 using Microsoft.AspNetCore.Authentication.Cookies;
-using SocialNetwork.Shared.Services;
+
 using SocialNetwork.Web.Service.Extensions;
 using SocialNetwork.WEB.Core.Models.Settings;
 
