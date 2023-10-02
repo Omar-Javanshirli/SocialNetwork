@@ -29,6 +29,19 @@ namespace SocialNetwork.IdentityServer
         public void ConfigureServices(IServiceCollection services)
         {
 
+            services.AddMassTransit(x =>
+            {
+                x.UsingRabbitMq((context, cfg) =>
+                {
+                    cfg.Host(Configuration["RabbitMQUrl"], "/", host =>
+                    {
+                        host.Username("guest");
+                        host.Password("guest");
+                    });
+                });
+            });
+
+            services.AddMassTransitHostedService();
             services.AddControllersWithViews();
 
             services.AddIdentity<ApplicationUser, IdentityRole>()
