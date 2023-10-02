@@ -7,7 +7,9 @@ using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
 using SocialNetwork.IdentityServer.Core.Models;
+using SocialNetwork.IdentityServer.Core.Services;
 using SocialNetwork.IdentityServer.Data;
+using SocialNetworkIdentityServer.Service.Services;
 using SocialNetworkIdentityServer.Service.Validators;
 
 namespace SocialNetwork.IdentityServer
@@ -25,6 +27,8 @@ namespace SocialNetwork.IdentityServer
 
         public void ConfigureServices(IServiceCollection services)
         {
+            services.AddScoped<IAuthenticationService, AuthenticationService>();
+
             services.AddControllersWithViews();
 
             services.AddIdentity<ApplicationUser, IdentityRole>()

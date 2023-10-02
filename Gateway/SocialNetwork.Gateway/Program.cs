@@ -1,6 +1,6 @@
-using Ocelot.Middleware;
 using Ocelot.DependencyInjection;
-
+using Ocelot.Middleware;
+using static SocialNetwork.Gateway.Models.Setting;
 
 var builder = WebApplication.CreateBuilder(args);
 
@@ -9,12 +9,15 @@ Host.CreateDefaultBuilder(args).ConfigureAppConfiguration((hostingContext, confi
     config.AddJsonFile($"configuration.{hostingContext.HostingEnvironment.EnvironmentName.ToLower()}.json").AddEnvironmentVariables();
 });
 
+
 builder.Services.AddAuthentication().AddJwtBearer(Permission.GatewayPermission.GatewayAuthenticationScheme, options =>
 {
     options.Authority = builder.Configuration["IdentityServerURL"];
     options.Audience = Permission.GatewayPermission.ResourceGateway;
+    options.RequireHttpsMetadata = true;
 });
 
+//builder.Services.AddOcelot().AddDelegatingHandler<TokenExhangeDelegateHandler>();
 builder.Services.AddOcelot();
 
 var app = builder.Build();
