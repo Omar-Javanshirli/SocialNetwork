@@ -1,4 +1,5 @@
-﻿using B._SocialNetwork.Services.Graph.Core.Entities.CommentEntity;
+﻿using B._SocialNetwork.Service.Graph.Core;
+using B._SocialNetwork.Services.Graph.Core.Entities.CommentEntity;
 using B._SocialNetwork.Services.Graph.Core.Entities.FriendEntity;
 using B._SocialNetwork.Services.Graph.Core.Entities.PostEntity;
 using B._SocialNetwork.Services.Graph.Core.Enums;

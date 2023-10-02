@@ -1,4 +1,5 @@
-﻿using B._SocialNetwork.Services.Graph.Core.Entities.UserEntity;
+﻿using B._SocialNetwork.Service.Graph.Core;
+using B._SocialNetwork.Services.Graph.Core.Entities.UserEntity;
 
 namespace B._SocialNetwork.Services.Graph.Core.Entities.FriendEntity
 {

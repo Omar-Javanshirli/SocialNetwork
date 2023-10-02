@@ -14,7 +14,8 @@
   </ItemGroup>
 
   <ItemGroup>
-    <ProjectReference Include="..\B. SocialNetwork.Services.Graph.Core\B. SocialNetwork.Services.Graph.Core.csproj" />
+    <ProjectReference Include="..\..\..\Shared\SocialNetwork.Shared\SocialNetwork.Shared.csproj" />
+    <ProjectReference Include="..\B. SocialNetwork.Service.Graph.Core\B. SocialNetwork.Service.Graph.Core.csproj" />
   </ItemGroup>
 
 </Project>
