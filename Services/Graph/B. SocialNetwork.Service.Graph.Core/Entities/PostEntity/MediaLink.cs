@@ -1,6 +1,8 @@
-﻿namespace B._SocialNetwork.Services.Graph.Core.Entities.PostEntity
+﻿using B._SocialNetwork.Service.Graph.Core;
+
+namespace B._SocialNetwork.Services.Graph.Core.Entities.PostEntity
 {
-    public class MediaLink:BaseEntity
+    public class MediaLink : BaseEntity
     {
         public bool IsImage { get; set; }
         public string Url { get; set; } = null!;

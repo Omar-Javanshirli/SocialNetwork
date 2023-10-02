@@ -81,7 +81,8 @@ EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "SocialNetwork.Gateway", "Gateway\SocialNetwork.Gateway\SocialNetwork.Gateway.csproj", "{DB3FB7F6-17C5-4C71-BC86-4EAB73C8D009}"
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "SocialNetwork.IdentityServer.Data", "IdentityServer\SocialNetwork.IdentityServer.Data\SocialNetwork.IdentityServer.Data.csproj", "{7BC12EA6-53D6-4E7B-918F-95538753679B}"
-
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "B. SocialNetwork.Service.Graph.Core", "Services\Graph\B. SocialNetwork.Service.Graph.Core\B. SocialNetwork.Service.Graph.Core.csproj", "{B3D39E1D-EDA1-47CF-B064-7205C8DD2C18}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -177,10 +178,10 @@ Global
 		{7BC12EA6-53D6-4E7B-918F-95538753679B}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{7BC12EA6-53D6-4E7B-918F-95538753679B}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{7BC12EA6-53D6-4E7B-918F-95538753679B}.Release|Any CPU.Build.0 = Release|Any CPU
-		{F2FAA155-FFB6-4EE8-BA4F-9F7805967D89}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{F2FAA155-FFB6-4EE8-BA4F-9F7805967D89}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{F2FAA155-FFB6-4EE8-BA4F-9F7805967D89}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{F2FAA155-FFB6-4EE8-BA4F-9F7805967D89}.Release|Any CPU.Build.0 = Release|Any CPU
+		{B3D39E1D-EDA1-47CF-B064-7205C8DD2C18}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{B3D39E1D-EDA1-47CF-B064-7205C8DD2C18}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{B3D39E1D-EDA1-47CF-B064-7205C8DD2C18}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{B3D39E1D-EDA1-47CF-B064-7205C8DD2C18}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -218,7 +219,7 @@ Global
 		{849DF1FA-5467-46D1-972D-0CE335758C8D} = {0E8BB422-E580-4405-8D35-77EBD404B042}
 		{DB3FB7F6-17C5-4C71-BC86-4EAB73C8D009} = {FF7410AF-0D55-4C9D-BDBF-F23B566B5084}
 		{7BC12EA6-53D6-4E7B-918F-95538753679B} = {88544639-6DCB-4A5F-A910-7ABF8C54A729}
-		{F2FAA155-FFB6-4EE8-BA4F-9F7805967D89} = {FBAC7601-6A90-4627-8C63-D18B4B3C534F}
+		{B3D39E1D-EDA1-47CF-B064-7205C8DD2C18} = {FBAC7601-6A90-4627-8C63-D18B4B3C534F}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {1B5139B3-0A01-479B-A61A-8B150C8675AE}

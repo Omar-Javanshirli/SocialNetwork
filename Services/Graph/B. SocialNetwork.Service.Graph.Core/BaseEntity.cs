@@ -1,4 +1,4 @@
-﻿namespace B._SocialNetwork.Services.Graph.Core
+﻿namespace B._SocialNetwork.Service.Graph.Core
 {
     public class BaseEntity
     {

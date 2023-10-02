@@ -1,8 +1,9 @@
-﻿using B._SocialNetwork.Services.Graph.Core.Entities.UserEntity;
+﻿using B._SocialNetwork.Service.Graph.Core;
+using B._SocialNetwork.Services.Graph.Core.Entities.UserEntity;
 
 namespace B._SocialNetwork.Services.Graph.Core.Entities.PostEntity
 {
-    public class SavedPost:BaseEntity
+    public class SavedPost : BaseEntity
     {
         public Guid UserId { get; set; }
         public Guid PostId { get; set; }

@@ -2,7 +2,7 @@
 
   <PropertyGroup>
     <TargetFramework>net7.0</TargetFramework>
-    <RootNamespace>B._SocialNetwork.Services.Graph.Core</RootNamespace>
+    <RootNamespace>B._SocialNetwork.Service.Graph.Core</RootNamespace>
     <ImplicitUsings>enable</ImplicitUsings>
     <Nullable>enable</Nullable>
   </PropertyGroup>
