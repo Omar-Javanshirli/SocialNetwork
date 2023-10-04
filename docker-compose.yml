@@ -1,8 +1,18 @@
-version: '3.4'
-
-services:
-  a.socialnetwork.services.graph:
-    image: ${DOCKER_REGISTRY-}asocialnetworkservicesgraph
-    build:
-      context: .
-      dockerfile: C:\Users\User\source\repos\SocialNetwork
+version: "3.4"
+services: 
+  jaeger:
+    image: jaegertracing/all-in-one:1.49
+  identitydb:
+    image: mcr.microsoft.com/mssql/server:2022-latest
+  graphdb:
+    image: mcr.microsoft.com/mssql/server:2022-latest
+  rabbitmq:
+    image: rabbitmq:3.12.2-management
+  elasticsearch: 
+    image: docker.elastic.co/elasticsearch/elasticsearch:8.8.1
+  kibana:
+    image: docker.elastic.co/kibana/kibana:8.8.1
+volumes:
+  identitydb_volume:
+  graphdb_volume:
+  elasticsearch_volume:
