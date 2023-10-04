@@ -1,18 +1,24 @@
 version: "3.4"
-services: 
-  jaeger:
-    image: jaegertracing/all-in-one:1.49
-  identitydb:
-    image: mcr.microsoft.com/mssql/server:2022-latest
-  graphdb:
-    image: mcr.microsoft.com/mssql/server:2022-latest
-  rabbitmq:
-    image: rabbitmq:3.12.2-management
-  elasticsearch: 
-    image: docker.elastic.co/elasticsearch/elasticsearch:8.8.1
-  kibana:
-    image: docker.elastic.co/kibana/kibana:8.8.1
+services:
+    elasticsearch:
+        image: docker.elastic.co/elasticsearch/elasticsearch:8.7.1
+    kibana:
+        image: docker.elastic.co/kibana/kibana:8.7.1
+    jaeger: 
+        image: jaegertracing/all-in-one:1.49
+    rabbitmq: 
+        image: rabbitmq:3.12.2-management
+    identitydb: 
+        image: mcr.microsoft.com/mssql/server:2022-latest
+    graphdb: 
+        image: mcr.microsoft.com/mssql/server:2022-latest 
+networks:
+  es-net:
+    driver: bridge
 volumes:
+  elasticsearch-data:
+    driver: local
+  kibana-data:
+    driver: local
   identitydb_volume:
   graphdb_volume:
-  elasticsearch_volume:

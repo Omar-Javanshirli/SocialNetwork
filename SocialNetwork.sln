@@ -84,6 +84,12 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "B. SocialNetwork.Service.Gr
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "SocialNetwork.IdentityServer", "IdentityServer\SocialNetwork.IdentityServer\SocialNetwork.IdentityServer.csproj", "{72F5B76C-43A2-44C3-9F1F-AA3B9174683B}"
 EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Docker", "Docker", "{56ACE548-87A2-44DE-8DD2-5E9764744DFC}"
+	ProjectSection(SolutionItems) = preProject
+		docker-compose.override.yml = docker-compose.override.yml
+		docker-compose.yml = docker-compose.yml
+	EndProjectSection
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
