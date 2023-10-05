@@ -19,6 +19,8 @@
   </ItemGroup>
 
   <ItemGroup>
+    <ProjectReference Include="..\..\..\Shared\SocialNetwork.OpenTelemetry.Shared\SocialNetwork.OpenTelemetry.Shared.csproj" />
+    <ProjectReference Include="..\..\..\Shared\SocialNetwork.Shared.Logging\SocialNetwork.Shared.Logging.csproj" />
     <ProjectReference Include="..\..\..\Shared\SocialNetwork.Shared\SocialNetwork.Shared.csproj" />
     <ProjectReference Include="..\D. SocialNetwork.Services.Graph.Services\D. SocialNetwork.Services.Graph.Services.csproj" />
   </ItemGroup>

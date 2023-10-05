@@ -1,7 +1,12 @@
-using MassTransit;
+using Serilog;
+using SocialNetwork.Shared.Logging.Extensions;
+using SocialNetwork.Shared.Logging.Middlewares;
+using SocialNetwork.Shared.Middlewares;
+using SocialNetwork.OpenTelemetry.Shared.OpenTelemetrySetting;
+
 
 var builder = WebApplication.CreateBuilder(args);
-
+builder.Host.UseSerilog(Logging.ConfigureLogging);
 // Add services to the container.
 
 builder.Services.AddControllers();
@@ -9,6 +14,7 @@ builder.Services.AddControllers();
 builder.Services.AddEndpointsApiExplorer();
 builder.Services.AddSwaggerGen();
 
+builder.Services.AddOpenTelemetryExt(builder.Configuration);
 builder.Services.AddApplicationServices(builder.Configuration);
 
 var app = builder.Build();
@@ -21,6 +27,10 @@ if (app.Environment.IsDevelopment())
 }
 
 app.UseHttpsRedirection();
+
+app.UseMiddleware<OpenTelemetryTraceIdMiddleware>();
+app.UseMiddleware<RequestAndResponseActivityMiddleware>();
+app.UseExceptionMiddleware();
 
 app.UseAuthentication();
 app.UseAuthorization();
