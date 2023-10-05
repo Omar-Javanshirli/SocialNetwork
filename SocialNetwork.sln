@@ -92,6 +92,8 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "SocialNetwork.OpenTelemetry
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "SocialNetwork.SharedForIdentityServer", "Shared\SocialNetwork.SharedForIdentityServer\SocialNetwork.SharedForIdentityServer.csproj", "{A88852BE-E68C-429A-9537-BD551078709B}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SocialNetwork.Shared", "Shared\SocialNetwork.Shared\SocialNetwork.Shared.csproj", "{E3F8C3C6-EA94-461D-B90C-03EF07E13F4F}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -194,6 +196,10 @@ Global
 		{A88852BE-E68C-429A-9537-BD551078709B}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{A88852BE-E68C-429A-9537-BD551078709B}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{A88852BE-E68C-429A-9537-BD551078709B}.Release|Any CPU.Build.0 = Release|Any CPU
+		{E3F8C3C6-EA94-461D-B90C-03EF07E13F4F}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{E3F8C3C6-EA94-461D-B90C-03EF07E13F4F}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{E3F8C3C6-EA94-461D-B90C-03EF07E13F4F}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{E3F8C3C6-EA94-461D-B90C-03EF07E13F4F}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -233,6 +239,7 @@ Global
 		{72F5B76C-43A2-44C3-9F1F-AA3B9174683B} = {88544639-6DCB-4A5F-A910-7ABF8C54A729}
 		{DEBBCE0C-01A3-4ADA-ACAF-90A3CC1A236F} = {42CAD214-9903-48ED-BE75-561A510419C1}
 		{A88852BE-E68C-429A-9537-BD551078709B} = {42CAD214-9903-48ED-BE75-561A510419C1}
+		{E3F8C3C6-EA94-461D-B90C-03EF07E13F4F} = {42CAD214-9903-48ED-BE75-561A510419C1}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {1B5139B3-0A01-479B-A61A-8B150C8675AE}
