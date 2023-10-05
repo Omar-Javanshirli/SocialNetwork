@@ -10,8 +10,6 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solition Folder", "Solition
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Shared", "Shared", "{42CAD214-9903-48ED-BE75-561A510419C1}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "SocialNetwork.Shared", "Shared\SocialNetwork.Shared\SocialNetwork.Shared.csproj", "{0B54A5D3-6C52-4EDA-9721-021E830D8863}"
-EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "IdentityServer", "IdentityServer", "{88544639-6DCB-4A5F-A910-7ABF8C54A729}"
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Frontends", "Frontends", "{0E8BB422-E580-4405-8D35-77EBD404B042}"
@@ -92,7 +90,9 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Docker", "Docker", "{56ACE5
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "SocialNetwork.OpenTelemetry.Shared", "Shared\SocialNetwork.OpenTelemetry.Shared\SocialNetwork.OpenTelemetry.Shared.csproj", "{DEBBCE0C-01A3-4ADA-ACAF-90A3CC1A236F}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SocialNetwork.SharedForIdentityServer", "Shared\SocialNetwork.SharedForIdentityServer\SocialNetwork.SharedForIdentityServer.csproj", "{A88852BE-E68C-429A-9537-BD551078709B}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "SocialNetwork.SharedForIdentityServer", "Shared\SocialNetwork.SharedForIdentityServer\SocialNetwork.SharedForIdentityServer.csproj", "{A88852BE-E68C-429A-9537-BD551078709B}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SocialNetwork.Shared", "Shared\SocialNetwork.Shared\SocialNetwork.Shared\SocialNetwork.Shared.csproj", "{86BD6166-17AE-47C3-BD79-F74CFF060F4F}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -100,10 +100,6 @@ Global
 		Release|Any CPU = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(ProjectConfigurationPlatforms) = postSolution
-		{0B54A5D3-6C52-4EDA-9721-021E830D8863}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{0B54A5D3-6C52-4EDA-9721-021E830D8863}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{0B54A5D3-6C52-4EDA-9721-021E830D8863}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{0B54A5D3-6C52-4EDA-9721-021E830D8863}.Release|Any CPU.Build.0 = Release|Any CPU
 		{1F264507-CEE6-48AA-AFAE-65C6C6220702}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
 		{1F264507-CEE6-48AA-AFAE-65C6C6220702}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{1F264507-CEE6-48AA-AFAE-65C6C6220702}.Release|Any CPU.ActiveCfg = Release|Any CPU
@@ -200,12 +196,15 @@ Global
 		{A88852BE-E68C-429A-9537-BD551078709B}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{A88852BE-E68C-429A-9537-BD551078709B}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{A88852BE-E68C-429A-9537-BD551078709B}.Release|Any CPU.Build.0 = Release|Any CPU
+		{86BD6166-17AE-47C3-BD79-F74CFF060F4F}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{86BD6166-17AE-47C3-BD79-F74CFF060F4F}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{86BD6166-17AE-47C3-BD79-F74CFF060F4F}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{86BD6166-17AE-47C3-BD79-F74CFF060F4F}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
 	EndGlobalSection
 	GlobalSection(NestedProjects) = preSolution
-		{0B54A5D3-6C52-4EDA-9721-021E830D8863} = {42CAD214-9903-48ED-BE75-561A510419C1}
 		{35230779-C733-46F2-92DD-040268AB8AE6} = {75FEDEEA-7FE0-4611-BF12-5D3EFD436F8A}
 		{1F264507-CEE6-48AA-AFAE-65C6C6220702} = {35230779-C733-46F2-92DD-040268AB8AE6}
 		{33F9E7BC-DB00-4B8D-8239-23B3685FB05E} = {75FEDEEA-7FE0-4611-BF12-5D3EFD436F8A}
@@ -240,6 +239,7 @@ Global
 		{72F5B76C-43A2-44C3-9F1F-AA3B9174683B} = {88544639-6DCB-4A5F-A910-7ABF8C54A729}
 		{DEBBCE0C-01A3-4ADA-ACAF-90A3CC1A236F} = {42CAD214-9903-48ED-BE75-561A510419C1}
 		{A88852BE-E68C-429A-9537-BD551078709B} = {42CAD214-9903-48ED-BE75-561A510419C1}
+		{86BD6166-17AE-47C3-BD79-F74CFF060F4F} = {42CAD214-9903-48ED-BE75-561A510419C1}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {1B5139B3-0A01-479B-A61A-8B150C8675AE}
