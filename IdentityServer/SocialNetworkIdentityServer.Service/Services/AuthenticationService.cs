@@ -1,9 +1,9 @@
 ﻿using Microsoft.AspNetCore.Identity;
+using SocialNetwork.IdentityServer.Core.Dtos;
 using SocialNetwork.IdentityServer.Core.Models;
 using SocialNetwork.IdentityServer.Core.Models.Input;
 using SocialNetwork.IdentityServer.Core.Services;
-using SocialNetwork.Shared.Dtos;
-using SocialNetwork.Shared.Messages;
+using SocialNetwork.SharedForIdentityServer.Messages;
 using System;
 using System.Threading.Tasks;
 using Mass = MassTransit;

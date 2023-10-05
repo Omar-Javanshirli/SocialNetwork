@@ -10,7 +10,7 @@
   </ItemGroup>
 
   <ItemGroup>
-    <ProjectReference Include="..\..\Shared\SocialNetwork.Shared\SocialNetwork.Shared.csproj" />
+    <ProjectReference Include="..\..\Shared\SocialNetwork.SharedForIdentityServer\SocialNetwork.SharedForIdentityServer.csproj" />
     <ProjectReference Include="..\SocialNetwork.IdentityServer.Data\SocialNetwork.IdentityServer.Data.csproj" />
   </ItemGroup>
 

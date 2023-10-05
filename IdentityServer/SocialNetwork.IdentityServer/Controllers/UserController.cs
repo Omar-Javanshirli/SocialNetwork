@@ -1,7 +1,7 @@
 ﻿using Microsoft.AspNetCore.Identity;
 using Microsoft.AspNetCore.Mvc;
+using SocialNetwork.IdentityServer.Core.ControllerBases;
 using SocialNetwork.IdentityServer.Core.Models;
-using SocialNetwork.Shared.ControllerBases;
 using System.IdentityModel.Tokens.Jwt;
 using System.Linq;
 using System.Threading.Tasks;
