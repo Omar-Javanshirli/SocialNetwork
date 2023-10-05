@@ -1,7 +1,7 @@
 ﻿using B._SocialNetwork.Services.Graph.Core.Dtos.Users;
 using B._SocialNetwork.Services.Graph.Core.UnitOfWorks;
 using MassTransit;
-using SocialNetwork.Shared.Messages;
+using SocialNetwork.SharedForIdentityServer.Messages;
 
 namespace D._SocialNetwork.Services.Graph.Services.Consumers
 {

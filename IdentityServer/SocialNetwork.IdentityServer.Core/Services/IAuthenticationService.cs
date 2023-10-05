@@ -1,6 +1,6 @@
-﻿using SocialNetwork.IdentityServer.Core.Models;
+﻿using SocialNetwork.IdentityServer.Core.Dtos;
+using SocialNetwork.IdentityServer.Core.Models;
 using SocialNetwork.IdentityServer.Core.Models.Input;
-using SocialNetwork.Shared.Dtos;
 using System.Threading.Tasks;
 
 namespace SocialNetwork.IdentityServer.Core.Services

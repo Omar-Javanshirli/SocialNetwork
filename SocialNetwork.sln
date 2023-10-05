@@ -90,7 +90,9 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Docker", "Docker", "{56ACE5
 		docker-compose.yml = docker-compose.yml
 	EndProjectSection
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SocialNetwork.OpenTelemetry.Shared", "Shared\SocialNetwork.OpenTelemetry.Shared\SocialNetwork.OpenTelemetry.Shared.csproj", "{DEBBCE0C-01A3-4ADA-ACAF-90A3CC1A236F}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "SocialNetwork.OpenTelemetry.Shared", "Shared\SocialNetwork.OpenTelemetry.Shared\SocialNetwork.OpenTelemetry.Shared.csproj", "{DEBBCE0C-01A3-4ADA-ACAF-90A3CC1A236F}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SocialNetwork.SharedForIdentityServer", "Shared\SocialNetwork.SharedForIdentityServer\SocialNetwork.SharedForIdentityServer.csproj", "{A88852BE-E68C-429A-9537-BD551078709B}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -194,6 +196,10 @@ Global
 		{DEBBCE0C-01A3-4ADA-ACAF-90A3CC1A236F}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{DEBBCE0C-01A3-4ADA-ACAF-90A3CC1A236F}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{DEBBCE0C-01A3-4ADA-ACAF-90A3CC1A236F}.Release|Any CPU.Build.0 = Release|Any CPU
+		{A88852BE-E68C-429A-9537-BD551078709B}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{A88852BE-E68C-429A-9537-BD551078709B}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{A88852BE-E68C-429A-9537-BD551078709B}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{A88852BE-E68C-429A-9537-BD551078709B}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -233,6 +239,7 @@ Global
 		{B3D39E1D-EDA1-47CF-B064-7205C8DD2C18} = {FBAC7601-6A90-4627-8C63-D18B4B3C534F}
 		{72F5B76C-43A2-44C3-9F1F-AA3B9174683B} = {88544639-6DCB-4A5F-A910-7ABF8C54A729}
 		{DEBBCE0C-01A3-4ADA-ACAF-90A3CC1A236F} = {42CAD214-9903-48ED-BE75-561A510419C1}
+		{A88852BE-E68C-429A-9537-BD551078709B} = {42CAD214-9903-48ED-BE75-561A510419C1}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {1B5139B3-0A01-479B-A61A-8B150C8675AE}

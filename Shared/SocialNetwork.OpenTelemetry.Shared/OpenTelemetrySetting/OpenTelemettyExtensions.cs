@@ -1,4 +1,5 @@
 ﻿using MassTransit.Logging;
+using Microsoft.AspNetCore.Builder;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using OpenTelemetry.Resources;
@@ -78,5 +79,6 @@ namespace SocialNetwork.OpenTelemetry.Shared.OpenTelemetrySetting
                 });
             });
         }
+
     }
 }
